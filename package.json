@@ -1,0 +1,17 @@
+{
+  "name": "accent-coach",
+  "version": "1.0.0",
+  "private": true,
+  "description": "English accent coach: phoneme-level pronunciation scoring (Azure AI Speech) + AI coaching (Groq), deployable to Vercel in one click.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node scripts/dev-server.js",
+    "eval": "node evals/run-evals.js",
+    "eval:live": "node evals/run-evals.js --live",
+    "test": "node --test tests/api.test.js && node evals/run-evals.js"
+  }
+}

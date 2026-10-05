@@ -1,0 +1,331 @@
+{
+  "version": "2.1.0",
+  "locale": "en-US",
+  "level": "B1",
+  "source": "Phrase-only curriculum: B1 /θ/ and /ð/ in everyday collocations, progressive sentences and minimal-pair contrast drills (/θ/–/s/, /ð/–/d/, /θ/–/t/, /w/–/v/). Builds on the B1 /θ/ and B2 /ð/ topics of English_Accent_Training_Actual_Program.md.",
+  "sections": [
+    {
+      "id": "collocation",
+      "label": "Everyday phrase",
+      "description": "Short collocations and work phrases (3–5 words) that put /θ/ or /ð/ in a natural chunk."
+    },
+    {
+      "id": "sentence",
+      "label": "B1 sentence",
+      "description": "Progressive 6–10 word sentences with several /θ/ and /ð/ sounds in connected speech."
+    },
+    {
+      "id": "contrast",
+      "label": "Contrast drill",
+      "description": "Minimal-pair sentences that force a clean switch between commonly confused sounds."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "B1-S01",
+      "section": "collocation",
+      "type": "phrase",
+      "target_text": "Think outside the box.",
+      "focus": [
+        "θ",
+        "ð"
+      ],
+      "target_words": [
+        "think"
+      ],
+      "position": "initial",
+      "cue": "'Think' is voiceless /θ/ — air only. 'the' is voiced /ð/ — same tongue, add a buzz."
+    },
+    {
+      "id": "B1-S02",
+      "section": "collocation",
+      "type": "phrase",
+      "target_text": "Through thick and thin.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "through",
+        "thick",
+        "thin"
+      ],
+      "position": "initial",
+      "cue": "Three /θ/ starts in a row: reset the tongue tip to your teeth before each one."
+    },
+    {
+      "id": "B1-S03",
+      "section": "collocation",
+      "type": "phrase",
+      "target_text": "Worth the extra effort.",
+      "focus": [
+        "θ",
+        "ð",
+        "w"
+      ],
+      "target_words": [
+        "worth"
+      ],
+      "position": "mixed",
+      "cue": "Round the lips for /w/, finish 'worth' with air at the teeth, then glide into a voiced 'the'."
+    },
+    {
+      "id": "B1-S04",
+      "section": "collocation",
+      "type": "phrase",
+      "target_text": "Healthy teeth and gums.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "healthy",
+        "teeth"
+      ],
+      "position": "mixed",
+      "cue": "Don't let the final /θ/ in 'teeth' turn into /t/ or /s/ before 'and'."
+    },
+    {
+      "id": "B1-S05",
+      "section": "collocation",
+      "type": "phrase",
+      "target_text": "Breathe in fresh air.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "breathe"
+      ],
+      "position": "final",
+      "cue": "'Breathe' ends in voiced /ð/ — feel the buzz on your tongue as you link into 'in'."
+    },
+    {
+      "id": "B1-S06",
+      "section": "collocation",
+      "type": "phrase",
+      "target_text": "Smooth as leather.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "smooth",
+        "leather"
+      ],
+      "position": "mixed",
+      "cue": "Two voiced /ð/ sounds: keep the tongue light at the teeth, never a hard /d/."
+    },
+    {
+      "id": "B1-P01",
+      "section": "sentence",
+      "type": "phrase",
+      "target_text": "I thought about thirty-three things this morning.",
+      "focus": [
+        "θ",
+        "ð"
+      ],
+      "target_words": [
+        "thought",
+        "thirty",
+        "three",
+        "things",
+        "this"
+      ],
+      "position": "initial",
+      "cue": "Four voiceless /θ/ starts, then a voiced /ð/ in 'this' — keep each one airy as you speed up."
+    },
+    {
+      "id": "B1-P02",
+      "section": "sentence",
+      "type": "phrase",
+      "target_text": "The author shared his thoughtful perspective on the theme.",
+      "focus": [
+        "θ",
+        "ð"
+      ],
+      "target_words": [
+        "author",
+        "thoughtful",
+        "theme"
+      ],
+      "position": "mixed",
+      "cue": "'The' is voiced /ð/, 'author', 'thoughtful' and 'theme' are voiceless /θ/ — same tongue, different buzz."
+    },
+    {
+      "id": "B1-P03",
+      "section": "sentence",
+      "type": "phrase",
+      "target_text": "Her healthy tooth was throbbing throughout the night.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "healthy",
+        "tooth",
+        "throbbing",
+        "throughout"
+      ],
+      "position": "mixed",
+      "cue": "Watch the final /θ/ in 'tooth' before the /w/ of 'was'."
+    },
+    {
+      "id": "B1-P04",
+      "section": "sentence",
+      "type": "phrase",
+      "target_text": "We need a thorough method to measure team growth.",
+      "focus": [
+        "θ",
+        "w"
+      ],
+      "target_words": [
+        "we",
+        "thorough",
+        "method",
+        "growth"
+      ],
+      "position": "mixed",
+      "cue": "Keep the /θ/ in 'method' and the final /θ/ in 'growth' — they are easy to drop at speed."
+    },
+    {
+      "id": "B1-P05",
+      "section": "sentence",
+      "type": "phrase",
+      "target_text": "They walked together through the chilly autumn weather.",
+      "focus": [
+        "ð",
+        "θ",
+        "w"
+      ],
+      "target_words": [
+        "they",
+        "walked",
+        "together",
+        "through",
+        "weather"
+      ],
+      "position": "mixed",
+      "cue": "Voiced /ð/ in 'they', 'together', 'the', 'weather'; voiceless /θ/ only in 'through'."
+    },
+    {
+      "id": "B1-P06",
+      "section": "sentence",
+      "type": "phrase",
+      "target_text": "Although it was difficult, they found a worthwhile pathway.",
+      "focus": [
+        "ð",
+        "θ",
+        "w"
+      ],
+      "target_words": [
+        "although",
+        "was",
+        "they",
+        "worthwhile",
+        "pathway"
+      ],
+      "position": "medial",
+      "cue": "'Although', 'they' are voiced /ð/; 'worthwhile' and 'pathway' hide a voiceless /θ/ before a /w/."
+    },
+    {
+      "id": "B1-C01",
+      "section": "contrast",
+      "type": "contrast",
+      "target_text": "I think the kitchen sink is clean.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "think",
+        "sink"
+      ],
+      "cue": "think = tongue at the teeth; sink = tongue behind the teeth.",
+      "contrast": [
+        "think",
+        "sink"
+      ]
+    },
+    {
+      "id": "B1-C02",
+      "section": "contrast",
+      "type": "contrast",
+      "target_text": "Take a deep breath and pass the test.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "breath",
+        "pass",
+        "test"
+      ],
+      "cue": "breath ends with air between the teeth; pass and test end with a sharp hiss behind them.",
+      "contrast": [
+        "breath",
+        "pass"
+      ]
+    },
+    {
+      "id": "B1-C03",
+      "section": "contrast",
+      "type": "contrast",
+      "target_text": "They dare to go there together.",
+      "focus": [
+        "ð",
+        "d"
+      ],
+      "target_words": [
+        "they",
+        "dare",
+        "there",
+        "together"
+      ],
+      "cue": "they = soft buzz at the teeth; dare = a quick tap behind the teeth.",
+      "contrast": [
+        "they",
+        "dare"
+      ]
+    },
+    {
+      "id": "B1-C04",
+      "section": "contrast",
+      "type": "contrast",
+      "target_text": "Three tall trees grew along the track.",
+      "focus": [
+        "θ",
+        "t"
+      ],
+      "target_words": [
+        "three",
+        "tall",
+        "trees",
+        "track"
+      ],
+      "cue": "three = friction you can stretch; tall, trees, track = a quick stop.",
+      "contrast": [
+        "three",
+        "trees"
+      ]
+    },
+    {
+      "id": "B1-C05",
+      "section": "contrast",
+      "type": "contrast",
+      "target_text": "We went to view the very wide valley.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "we",
+        "went",
+        "view",
+        "very",
+        "wide",
+        "valley"
+      ],
+      "cue": "/w/ = rounded lips, no teeth. /v/ = top teeth touch the lower lip.",
+      "contrast": [
+        "wide",
+        "view"
+      ]
+    }
+  ]
+}

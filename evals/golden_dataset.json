@@ -1,0 +1,877 @@
+{
+  "name": "Accent Coach — golden dataset",
+  "version": "3.0.0",
+  "description": "Six benchmark cases that pin down how raw Azure Pronunciation Assessment JSON becomes stars, target-sound gating, word chips, phoneme drifts and coaching decisions. Each case targets an edge case where a plausible implementation gets it wrong. `azure_segments` mirror the real SpeechServiceResponse_JsonResult shape (trimmed to the fields the app reads). Target words and focus sounds come from the exercise in src/phrases.json.",
+  "thresholds": {
+    "stars": {
+      "3": "overall ≥ 85 AND weakest target sound ≥ 80",
+      "2": "overall 65–84 (or ≥ 85 with weakest target 65–79)",
+      "1": "overall < 65 OR any target-sound failure"
+    },
+    "target_failure": "target phoneme < 65, heard as another phoneme, or target word skipped/replaced",
+    "word_chip": {
+      "green": ">=80",
+      "amber": "60-79",
+      "red": "<60"
+    },
+    "phoneme_drift": "<60 (any phoneme)"
+  },
+  "cases": [
+    {
+      "id": "GD-01",
+      "title": "Rounding boundary: 84.5 displays 85 and, with a strong /ð/, earns ★★★",
+      "edge_case": "Overall is rounded before banding, and ★★★ needs BOTH overall ≥ 85 and the weakest target sound ≥ 80.",
+      "exercise_id": "B1-S05",
+      "accent": "en-US",
+      "reference_text": "Breathe in fresh air.",
+      "azure_segments": [
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "Breathe in fresh air.",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "breathe in fresh air",
+              "Display": "Breathe in fresh air.",
+              "PronunciationAssessment": {
+                "AccuracyScore": 88,
+                "FluencyScore": 86,
+                "CompletenessScore": 100,
+                "PronScore": 84.5,
+                "ProsodyScore": 80
+              },
+              "Words": [
+                {
+                  "Word": "breathe",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 88,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "b", "PronunciationAssessment": {"AccuracyScore": 92, "NBestPhonemes": [{"Phoneme": "b", "Score": 92}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 90}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "i", "Score": 90}]}},
+                    {"Phoneme": "ð", "PronunciationAssessment": {"AccuracyScore": 82, "NBestPhonemes": [{"Phoneme": "ð", "Score": 82}]}}
+                  ]
+                },
+                {
+                  "Word": "in",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 90,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ɪ", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "ɪ", "Score": 93}]}},
+                    {"Phoneme": "n", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "n", "Score": 93}]}}
+                  ]
+                },
+                {
+                  "Word": "fresh",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 86,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "f", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "f", "Score": 89}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 89}]}},
+                    {"Phoneme": "ɛ", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "ɛ", "Score": 89}]}},
+                    {"Phoneme": "ʃ", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "ʃ", "Score": 89}]}}
+                  ]
+                },
+                {
+                  "Word": "air",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 88,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ɛ", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "ɛ", "Score": 91}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 91}]}}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "overall": 85,
+        "stars": 3,
+        "capped": false,
+        "needs_coaching": false,
+        "target_score": 82,
+        "target_level": "phoneme",
+        "target_failures": [],
+        "word_bands": {
+          "Breathe": "green",
+          "in": "green",
+          "fresh": "green",
+          "air.": "green"
+        },
+        "omitted": [],
+        "insertions": [],
+        "phoneme_drifts": []
+      },
+      "rationale": "A naive `score >= 85` on the raw 84.5 would show '85' next to ★★☆. The target /ð/ in 'breathe' is 82 (≥ 80), so the target gate passes and no coaching call is spent."
+    },
+    {
+      "id": "GD-02",
+      "title": "Too generous before: intelligible sentence (78) with /θ/→/s/ is capped at ★☆☆",
+      "edge_case": "Azure's overall score rewards intelligibility. 'Sink outside the box' is perfectly understandable, so the old rules gave ★★☆. The target-sound gate must cap it.",
+      "exercise_id": "B1-S01",
+      "accent": "en-US",
+      "reference_text": "Think outside the box.",
+      "azure_segments": [
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "Think outside the box.",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "think outside the box",
+              "Display": "Think outside the box.",
+              "PronunciationAssessment": {
+                "AccuracyScore": 80,
+                "FluencyScore": 90,
+                "CompletenessScore": 100,
+                "PronScore": 78,
+                "ProsodyScore": 82
+              },
+              "Words": [
+                {
+                  "Word": "think",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 62,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 30, "NBestPhonemes": [{"Phoneme": "s", "Score": 85}, {"Phoneme": "θ", "Score": 30}]}},
+                    {"Phoneme": "ɪ", "PronunciationAssessment": {"AccuracyScore": 92, "NBestPhonemes": [{"Phoneme": "ɪ", "Score": 92}]}},
+                    {"Phoneme": "ŋ", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "ŋ", "Score": 88}]}},
+                    {"Phoneme": "k", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "k", "Score": 95}]}}
+                  ]
+                },
+                {
+                  "Word": "outside",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 92,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "aʊ", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "aʊ", "Score": 95}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "t", "Score": 95}]}},
+                    {"Phoneme": "s", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "s", "Score": 95}]}},
+                    {"Phoneme": "aɪ", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "aɪ", "Score": 95}]}},
+                    {"Phoneme": "d", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "d", "Score": 95}]}}
+                  ]
+                },
+                {
+                  "Word": "the",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 94,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ð", "PronunciationAssessment": {"AccuracyScore": 97, "NBestPhonemes": [{"Phoneme": "ð", "Score": 97}]}},
+                    {"Phoneme": "ə", "PronunciationAssessment": {"AccuracyScore": 97, "NBestPhonemes": [{"Phoneme": "ə", "Score": 97}]}}
+                  ]
+                },
+                {
+                  "Word": "box",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 95,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "b", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "b", "Score": 98}]}},
+                    {"Phoneme": "ɑ", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "ɑ", "Score": 98}]}},
+                    {"Phoneme": "k", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "k", "Score": 98}]}},
+                    {"Phoneme": "s", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "s", "Score": 98}]}}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "overall": 78,
+        "stars": 1,
+        "capped": true,
+        "needs_coaching": true,
+        "target_score": 30,
+        "target_level": "phoneme",
+        "target_failures": [
+          {"word": "Think", "phoneme": "θ", "reason": "heard_as"}
+        ],
+        "word_bands": {
+          "Think": "amber",
+          "outside": "green",
+          "the": "green",
+          "box.": "green"
+        },
+        "omitted": [],
+        "insertions": [],
+        "phoneme_drifts": [
+          {"word": "Think", "expected": "θ", "produced": "s", "target": true}
+        ],
+        "coach_sound": "θ"
+      },
+      "rationale": "The word itself scores 62 (amber) and the sentence 78, yet the one sound the exercise exists for is gone. Only the phoneme-level gate catches it; the UI shows 'Capped at ★☆☆: /θ/ in \"Think\" was heard as /s/'."
+    },
+    {
+      "id": "GD-03",
+      "title": "θ→t inside a hyphenated word ('thirty-three' → 'tirty-tree')",
+      "edge_case": "Azure scores 'thirty' and 'three' as separate words; both are target words. The chip must fold back into one 'thirty-three' chip and both target failures must be reported.",
+      "exercise_id": "B1-P01",
+      "accent": "en-US",
+      "reference_text": "I thought about thirty-three things this morning.",
+      "azure_segments": [
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "I thought about thirty three things this morning.",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "i thought about thirty three things this morning",
+              "Display": "I thought about thirty three things this morning.",
+              "PronunciationAssessment": {
+                "AccuracyScore": 80,
+                "FluencyScore": 74,
+                "CompletenessScore": 100,
+                "PronScore": 71,
+                "ProsodyScore": 70
+              },
+              "Words": [
+                {
+                  "Word": "i",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 98,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "aɪ", "PronunciationAssessment": {"AccuracyScore": 100, "NBestPhonemes": [{"Phoneme": "aɪ", "Score": 100}]}}
+                  ]
+                },
+                {
+                  "Word": "thought",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 88,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "θ", "Score": 91}]}},
+                    {"Phoneme": "ɔ", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "ɔ", "Score": 91}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "t", "Score": 91}]}}
+                  ]
+                },
+                {
+                  "Word": "about",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 95,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ə", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "ə", "Score": 98}]}},
+                    {"Phoneme": "b", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "b", "Score": 98}]}},
+                    {"Phoneme": "aʊ", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "aʊ", "Score": 98}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "t", "Score": 98}]}}
+                  ]
+                },
+                {
+                  "Word": "thirty",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 55,
+                    "ErrorType": "Mispronunciation"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 20, "NBestPhonemes": [{"Phoneme": "t", "Score": 90}, {"Phoneme": "θ", "Score": 20}]}},
+                    {"Phoneme": "ɝ", "PronunciationAssessment": {"AccuracyScore": 80, "NBestPhonemes": [{"Phoneme": "ɝ", "Score": 80}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 85, "NBestPhonemes": [{"Phoneme": "t", "Score": 85}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "i", "Score": 90}]}}
+                  ]
+                },
+                {
+                  "Word": "three",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 62,
+                    "ErrorType": "Mispronunciation"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 35, "NBestPhonemes": [{"Phoneme": "t", "Score": 83}, {"Phoneme": "θ", "Score": 35}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 75, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 75}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "i", "Score": 88}]}}
+                  ]
+                },
+                {
+                  "Word": "things",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 90,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "θ", "Score": 93}]}},
+                    {"Phoneme": "ɪ", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "ɪ", "Score": 93}]}},
+                    {"Phoneme": "ŋ", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "ŋ", "Score": 93}]}},
+                    {"Phoneme": "z", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "z", "Score": 93}]}}
+                  ]
+                },
+                {
+                  "Word": "this",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 86,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ð", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "ð", "Score": 89}]}},
+                    {"Phoneme": "ɪ", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "ɪ", "Score": 89}]}},
+                    {"Phoneme": "s", "PronunciationAssessment": {"AccuracyScore": 89, "NBestPhonemes": [{"Phoneme": "s", "Score": 89}]}}
+                  ]
+                },
+                {
+                  "Word": "morning",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 93,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "m", "PronunciationAssessment": {"AccuracyScore": 96, "NBestPhonemes": [{"Phoneme": "m", "Score": 96}]}},
+                    {"Phoneme": "ɔ", "PronunciationAssessment": {"AccuracyScore": 96, "NBestPhonemes": [{"Phoneme": "ɔ", "Score": 96}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 96, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 96}]}},
+                    {"Phoneme": "n", "PronunciationAssessment": {"AccuracyScore": 96, "NBestPhonemes": [{"Phoneme": "n", "Score": 96}]}},
+                    {"Phoneme": "ɪ", "PronunciationAssessment": {"AccuracyScore": 96, "NBestPhonemes": [{"Phoneme": "ɪ", "Score": 96}]}},
+                    {"Phoneme": "ŋ", "PronunciationAssessment": {"AccuracyScore": 96, "NBestPhonemes": [{"Phoneme": "ŋ", "Score": 96}]}}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "overall": 71,
+        "stars": 1,
+        "capped": true,
+        "needs_coaching": true,
+        "target_score": 20,
+        "target_level": "phoneme",
+        "target_failures": [
+          {"word": "thirty-three", "phoneme": "θ", "reason": "heard_as"},
+          {"word": "thirty-three", "phoneme": "θ", "reason": "heard_as"}
+        ],
+        "word_bands": {
+          "I": "green",
+          "thought": "green",
+          "about": "green",
+          "thirty-three": "red",
+          "things": "green",
+          "this": "green",
+          "morning.": "green"
+        },
+        "omitted": [],
+        "insertions": [],
+        "phoneme_drifts": [
+          {"word": "thirty-three", "expected": "θ", "produced": "t", "target": true},
+          {"word": "thirty-three", "expected": "θ", "produced": "t", "target": true}
+        ],
+        "coach_sound": "θ"
+      },
+      "rationale": "Checks token alignment (8 Azure words → 7 chips), weakest-part chip scoring (55, red) and that target checks run per Azure part."
+    },
+    {
+      "id": "GD-04",
+      "title": "Dual gate: overall 90 but weakest /w/ only 72 → ★★☆, not ★★★",
+      "edge_case": "No failure (72 ≥ 65, no substitution), so no cap — but ★★★ also needs every target sound ≥ 80.",
+      "exercise_id": "B1-C05",
+      "accent": "en-US",
+      "reference_text": "We went to view the very wide valley.",
+      "azure_segments": [
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "We went to view the very wide valley.",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "we went to view the very wide valley",
+              "Display": "We went to view the very wide valley.",
+              "PronunciationAssessment": {
+                "AccuracyScore": 90,
+                "FluencyScore": 92,
+                "CompletenessScore": 100,
+                "PronScore": 90,
+                "ProsodyScore": 88
+              },
+              "Words": [
+                {
+                  "Word": "we",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 92,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "w", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "w", "Score": 95}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "i", "Score": 95}]}}
+                  ]
+                },
+                {
+                  "Word": "went",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 90,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "w", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "w", "Score": 93}]}},
+                    {"Phoneme": "ɛ", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "ɛ", "Score": 93}]}},
+                    {"Phoneme": "n", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "n", "Score": 93}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "t", "Score": 93}]}}
+                  ]
+                },
+                {
+                  "Word": "to",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 96,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 99, "NBestPhonemes": [{"Phoneme": "t", "Score": 99}]}},
+                    {"Phoneme": "ə", "PronunciationAssessment": {"AccuracyScore": 99, "NBestPhonemes": [{"Phoneme": "ə", "Score": 99}]}}
+                  ]
+                },
+                {
+                  "Word": "view",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 88,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "v", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "v", "Score": 91}]}},
+                    {"Phoneme": "j", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "j", "Score": 91}]}},
+                    {"Phoneme": "u", "PronunciationAssessment": {"AccuracyScore": 91, "NBestPhonemes": [{"Phoneme": "u", "Score": 91}]}}
+                  ]
+                },
+                {
+                  "Word": "the",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 94,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ð", "PronunciationAssessment": {"AccuracyScore": 97, "NBestPhonemes": [{"Phoneme": "ð", "Score": 97}]}},
+                    {"Phoneme": "ə", "PronunciationAssessment": {"AccuracyScore": 97, "NBestPhonemes": [{"Phoneme": "ə", "Score": 97}]}}
+                  ]
+                },
+                {
+                  "Word": "very",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 85,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "v", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "v", "Score": 88}]}},
+                    {"Phoneme": "ɛ", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "ɛ", "Score": 88}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 88}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "i", "Score": 88}]}}
+                  ]
+                },
+                {
+                  "Word": "wide",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 82,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "w", "PronunciationAssessment": {"AccuracyScore": 72, "NBestPhonemes": [{"Phoneme": "w", "Score": 72}]}},
+                    {"Phoneme": "aɪ", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "aɪ", "Score": 90}]}},
+                    {"Phoneme": "d", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "d", "Score": 90}]}}
+                  ]
+                },
+                {
+                  "Word": "valley",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 87,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "v", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "v", "Score": 90}]}},
+                    {"Phoneme": "æ", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "æ", "Score": 90}]}},
+                    {"Phoneme": "l", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "l", "Score": 90}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "i", "Score": 90}]}}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "overall": 90,
+        "stars": 2,
+        "capped": false,
+        "needs_coaching": true,
+        "target_score": 72,
+        "target_level": "phoneme",
+        "target_failures": [],
+        "word_bands": {
+          "wide": "green",
+          "view": "green",
+          "valley.": "green"
+        },
+        "omitted": [],
+        "insertions": [],
+        "phoneme_drifts": [],
+        "fallback_sound": "w",
+        "coach_sound": "w"
+      },
+      "rationale": "Every word is green and there are no drifts, so only the target gate explains the ★★☆. The coach gets weakest_target = /w/ in 'wide' and coaches that."
+    },
+    {
+      "id": "GD-05",
+      "title": "Two-segment recording: skipped target word + filler 'um'",
+      "edge_case": "In continuous mode Azure scores each segment against the FULL reference, so a naive merge marks half the sentence as skipped. After re-alignment, the genuinely skipped target word 'throbbing' must fail the gate.",
+      "exercise_id": "B1-P03",
+      "accent": "en-US",
+      "reference_text": "Her healthy tooth was throbbing throughout the night.",
+      "azure_segments": [
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "Her healthy tooth was",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "her healthy tooth was",
+              "Display": "Her healthy tooth was",
+              "PronunciationAssessment": {
+                "AccuracyScore": 85,
+                "FluencyScore": 80,
+                "CompletenessScore": 50,
+                "PronScore": 66,
+                "ProsodyScore": 70
+              },
+              "Words": [
+                {
+                  "Word": "her",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 95,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "h", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "h", "Score": 98}]}},
+                    {"Phoneme": "ɝ", "PronunciationAssessment": {"AccuracyScore": 98, "NBestPhonemes": [{"Phoneme": "ɝ", "Score": 98}]}}
+                  ]
+                },
+                {
+                  "Word": "healthy",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 70,
+                    "ErrorType": "Mispronunciation"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "h", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "h", "Score": 90}]}},
+                    {"Phoneme": "ɛ", "PronunciationAssessment": {"AccuracyScore": 85, "NBestPhonemes": [{"Phoneme": "ɛ", "Score": 85}]}},
+                    {"Phoneme": "l", "PronunciationAssessment": {"AccuracyScore": 80, "NBestPhonemes": [{"Phoneme": "l", "Score": 80}]}},
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 40, "NBestPhonemes": [{"Phoneme": "f", "Score": 80}, {"Phoneme": "θ", "Score": 40}]}},
+                    {"Phoneme": "i", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "i", "Score": 88}]}}
+                  ]
+                },
+                {
+                  "Word": "tooth",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 85,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "t", "Score": 88}]}},
+                    {"Phoneme": "u", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "u", "Score": 88}]}},
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "θ", "Score": 88}]}}
+                  ]
+                },
+                {
+                  "Word": "was",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 92,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "w", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "w", "Score": 95}]}},
+                    {"Phoneme": "ʌ", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "ʌ", "Score": 95}]}},
+                    {"Phoneme": "z", "PronunciationAssessment": {"AccuracyScore": 95, "NBestPhonemes": [{"Phoneme": "z", "Score": 95}]}}
+                  ]
+                },
+                {
+                  "Word": "throbbing",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "throughout",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "the",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "night",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "Um throughout the night.",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "um throughout the night",
+              "Display": "Um throughout the night.",
+              "PronunciationAssessment": {
+                "AccuracyScore": 87,
+                "FluencyScore": 60,
+                "CompletenessScore": 38,
+                "PronScore": 55,
+                "ProsodyScore": 66
+              },
+              "Words": [
+                {
+                  "Word": "her",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "healthy",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "tooth",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "was",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "throbbing",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Omission"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "um",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 0,
+                    "ErrorType": "Insertion"
+                  },
+                  "Phonemes": []
+                },
+                {
+                  "Word": "throughout",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 75,
+                    "ErrorType": "Mispronunciation"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "θ", "PronunciationAssessment": {"AccuracyScore": 55, "NBestPhonemes": [{"Phoneme": "t", "Score": 73}, {"Phoneme": "θ", "Score": 55}]}},
+                    {"Phoneme": "ɹ", "PronunciationAssessment": {"AccuracyScore": 80, "NBestPhonemes": [{"Phoneme": "ɹ", "Score": 80}]}},
+                    {"Phoneme": "u", "PronunciationAssessment": {"AccuracyScore": 88, "NBestPhonemes": [{"Phoneme": "u", "Score": 88}]}},
+                    {"Phoneme": "aʊ", "PronunciationAssessment": {"AccuracyScore": 85, "NBestPhonemes": [{"Phoneme": "aʊ", "Score": 85}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 90, "NBestPhonemes": [{"Phoneme": "t", "Score": 90}]}}
+                  ]
+                },
+                {
+                  "Word": "the",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 90,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "ð", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "ð", "Score": 93}]}},
+                    {"Phoneme": "ə", "PronunciationAssessment": {"AccuracyScore": 93, "NBestPhonemes": [{"Phoneme": "ə", "Score": 93}]}}
+                  ]
+                },
+                {
+                  "Word": "night",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 96,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"Phoneme": "n", "PronunciationAssessment": {"AccuracyScore": 99, "NBestPhonemes": [{"Phoneme": "n", "Score": 99}]}},
+                    {"Phoneme": "aɪ", "PronunciationAssessment": {"AccuracyScore": 99, "NBestPhonemes": [{"Phoneme": "aɪ", "Score": 99}]}},
+                    {"Phoneme": "t", "PronunciationAssessment": {"AccuracyScore": 99, "NBestPhonemes": [{"Phoneme": "t", "Score": 99}]}}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "overall": 76,
+        "stars": 1,
+        "capped": true,
+        "needs_coaching": true,
+        "accuracy": 86,
+        "fluency": 70,
+        "prosody": 68,
+        "completeness": 88,
+        "target_score": 0,
+        "target_level": "phoneme",
+        "target_failures": [
+          {"word": "healthy", "phoneme": "θ", "reason": "heard_as"},
+          {"word": "throbbing", "phoneme": null, "reason": "omitted"},
+          {"word": "throughout", "phoneme": "θ", "reason": "heard_as"}
+        ],
+        "word_bands": {
+          "Her": "green",
+          "healthy": "amber",
+          "throbbing": "red",
+          "throughout": "amber",
+          "night.": "green"
+        },
+        "omitted": [
+          "throbbing"
+        ],
+        "insertions": [
+          "um"
+        ],
+        "phoneme_drifts": [
+          {"word": "healthy", "expected": "θ", "produced": "f", "target": true},
+          {"word": "throughout", "expected": "θ", "produced": "t", "target": true}
+        ],
+        "coach_sound": "θ"
+      },
+      "rationale": "Hand-computed: accuracy = mean of 7 matched words (603/7 ≈ 86); fluency/prosody word-weighted (70, 68); completeness 7/8 ≈ 88; overall = 0.4×68 + 0.2×(70+86+88) = 76 → would be ★★☆, capped to ★☆☆ by three target failures."
+    },
+    {
+      "id": "GD-06",
+      "title": "No phoneme names (e.g. British RP): gate falls back to target-word scores; a non-target slip doesn't cap",
+      "edge_case": "Azure documents IPA phoneme names and prosody for en-US only. When phonemes come back unnamed, the target check must use the target words' scores instead of silently passing, and a weak non-target word ('and') must not cap the rating.",
+      "exercise_id": "B1-S02",
+      "accent": "en-GB",
+      "reference_text": "Through thick and thin.",
+      "azure_segments": [
+        {
+          "RecognitionStatus": "Success",
+          "DisplayText": "Through thick and thin.",
+          "NBest": [
+            {
+              "Confidence": 0.9,
+              "Lexical": "through thick and thin",
+              "Display": "Through thick and thin.",
+              "PronunciationAssessment": {
+                "AccuracyScore": 86,
+                "FluencyScore": 92,
+                "CompletenessScore": 100,
+                "PronScore": 88
+              },
+              "Words": [
+                {
+                  "Word": "through",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 90,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"PronunciationAssessment": {"AccuracyScore": 88}},
+                    {"PronunciationAssessment": {"AccuracyScore": 92}},
+                    {"PronunciationAssessment": {"AccuracyScore": 90}}
+                  ]
+                },
+                {
+                  "Word": "thick",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 84,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"PronunciationAssessment": {"AccuracyScore": 80}},
+                    {"PronunciationAssessment": {"AccuracyScore": 88}},
+                    {"PronunciationAssessment": {"AccuracyScore": 86}}
+                  ]
+                },
+                {
+                  "Word": "and",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 50,
+                    "ErrorType": "Mispronunciation"
+                  },
+                  "Phonemes": [
+                    {"PronunciationAssessment": {"AccuracyScore": 70}},
+                    {"PronunciationAssessment": {"AccuracyScore": 60}},
+                    {"PronunciationAssessment": {"AccuracyScore": 20}}
+                  ]
+                },
+                {
+                  "Word": "thin",
+                  "PronunciationAssessment": {
+                    "AccuracyScore": 86,
+                    "ErrorType": "None"
+                  },
+                  "Phonemes": [
+                    {"PronunciationAssessment": {"AccuracyScore": 84}},
+                    {"PronunciationAssessment": {"AccuracyScore": 90}},
+                    {"PronunciationAssessment": {"AccuracyScore": 88}}
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "expected": {
+        "overall": 88,
+        "stars": 3,
+        "capped": false,
+        "needs_coaching": true,
+        "prosody": null,
+        "target_score": 84,
+        "target_level": "word",
+        "target_failures": [],
+        "word_bands": {
+          "Through": "green",
+          "thick": "green",
+          "and": "red",
+          "thin.": "green"
+        },
+        "omitted": [],
+        "insertions": [],
+        "phoneme_drifts": []
+      },
+      "rationale": "Targets: through 90, thick 84, thin 86 → weakest 84 ≥ 80, overall 88 ≥ 85 → ★★★. 'and' is red but not a target word, so it triggers a tip without capping the stars. Prosody is null because Azure doesn't score it for en-GB."
+    }
+  ]
+}
