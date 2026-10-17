@@ -12,6 +12,9 @@ No sign-up, no setup for learners. Each attempt is scored sound-by-sound by Azur
 
 ## What a learner sees
 
+0. **Pronunciation Diagnostic Test (first visit only).** The learner reads one paragraph rich in /θ/ /ð/ /w/ /v/ /s/ (*"On Thursday morning, thirty-three people gathered…"*). Every occurrence of /θ/, /ð/, /w/ and /v/ is averaged (`AccentScoring.diagnosticProfile`), the 1–2 sounds below 70 become the learner's focus, and `/api/coach` (`mode: "diagnostic"`) writes a three-sentence report: top strength → main area to improve, with an articulatory cue → recommendation. The result `{ completed, weakPhonemes, summaryText, … }` is stored in `localStorage` under `accent_diagnostic_completed`, so returning learners go straight to **Your Personalized Plan**: the report, a bar per sound, and the library in two tabs, **Recommended Focus** (drills for the weak sounds first, `AccentScoring.rankExercises`) and **Browse All Exercises** (curriculum order). **Retake Diagnostic** in the top bar clears the result; **My Plan** returns to the dashboard. The diagnostic can be skipped. In British (RP) mode Azure returns no phoneme names, so each sound is scored from the words that carry it (`diagnostic.sound_words`), which is more lenient.
+**No numbers on screen (Oct 2026).** Learners see one of three badges instead of scores or stars: **Spot On! Crisp & Natural** (every target sound passed: ≥ 80 and not heard as another sound, skipped or replaced), **Almost There — Just Minor Polish** (fluent, exactly one target sound slipped just under the pass mark) or **Needs Work on Target Sound** (substituted/skipped/failed, more than one slip, or not fluent) — `AccentScoring.feedbackStatus`. Under it: the phrase with target words marked (green underline = clean, amber = slipped, coral = substituted or failed), one articulatory cue, and **Hear & Compare**: energy envelopes of the Azure model voice and the learner's recording with the words to work on highlighted, plus **Hear Target Sound** / **Hear Your Attempt** per word (sliced with Azure's word Offset/Duration, aligned to the recording by speech onset). The diagnostic counts clean occurrences per sound (a sound is a focus when fewer than 3 in 4 pass) and shows Clear / Nearly there / Focus. Thresholds stay internal; the CSV export still carries the raw numbers for analysis. The numbered list below describes the earlier score-based screen.
+
 1. **Pick a target accent** in the top bar: 🇺🇸 General American (`en-US`, default) or 🇬🇧 British RP (`en-GB`). It sets Azure's recognition benchmark and the voice used by **Listen**, and is remembered in the browser.
 2. **One card at a time.** "Exercise 3 of 17", with the target text, a one-line articulation cue and a **Listen** button. *Next Phrase* and *Try Again* only — no menus.
 3. **Record → stop.** Recording also stops on its own once every target word has been heard.
@@ -21,6 +24,28 @@ No sign-up, no setup for learners. Each attempt is scored sound-by-sound by Azur
 7. **Target sounds strip.** Every target-sound check for the exercise (e.g. *Think /θ/ → /s/ 30*, *wide /w/ 72*), green/amber/red at a glance.
 8. **Fluency and prosody** as quiet progress bars (prosody shows *n/a* for British English — see below).
 9. **Finish & Export.** A summary (phrases practised, average stars, top 2 trouble sounds) and **Download Session Analytics (.CSV)**.
+
+## Curriculum: topics, CSV and practice sessions
+
+**Edit `content/curriculum.csv`** (Excel, Numbers or Google Sheets; comma- or semicolon-separated, UTF-8) — it is the single source of truth:
+
+| Column | Meaning |
+|---|---|
+| `id` | unique exercise id (keep the `B1-…` ids: the golden evals use them) |
+| `topic_id`, `topic_title` | e.g. `th_unvoiced`, *Unvoiced /θ/ Sound* |
+| `target_sound` | IPA sound(s) checked, `|`-separated, e.g. `θ|s` |
+| `text` | a natural 3–8 word phrase (no single words) |
+| `type` | `phrase` or `contrast` |
+| `focus_words` | lowercase words of the text whose target sounds are checked, `|`-separated; for contrast drills the first two are the pair |
+| `pedagogical_cue` | one physical cue shown on the card |
+
+`npm run content` (also part of `npm run build` and `npm run dev`) validates it and writes `src/phrases.json` (tests/evals) and `public/data/curriculum.json` (the app). A bad row fails with a message naming the row; nothing is written. A topic's sounds are those targeted by at least half of its rows. The diagnostic paragraphs live in `content/diagnostics.json`.
+
+Ten topics ship today (125 phrases): **Unvoiced /θ/** (14), **Voiced /ð/** (14), **/θ/ vs /s/** (13), **W vs V** (12), **/s/ vs /z/ & final -s** (12), **/iː/ vs /ɪ/** (12), **/ʃ/ /tʃ/ /dʒ/** (12), **/r/ vs /l/** (12), **aspirated /p t k/ in clusters** (12) and **/æ/ vs /ɛ/** (12). Sounds are stored exactly as Azure en-US emits them (long /iː/ = `i`, English /r/ = `ɹ`); learner-style spellings such as `/r/` or `/iː/` are converted by the sync script. Azure scores each phoneme's accuracy but has no separate aspiration measure, so the /p t k/ topic checks the stops themselves.
+
+**Diagnostics (`content/diagnostics.json`).** Eleven short paragraphs, each measuring 1–4 sounds (`target_sounds`) with the words that carry each sound (`target_words`, keyed by sound). One is picked at random for a new learner, and a retake never repeats the last paragraph taken. The build fails if a paragraph measures a sound that no topic practises, or lists fewer than 3 words for a sound, so a weak sound always maps to drills.
+
+**Flow.** Diagnostic → **Your Priority Focus Topics** (topics whose sound the diagnostic flagged get *🎯 High Priority* and are pre-selected; tap any card to add or remove it) → **Start Practice Session**: a random queue of 6 drills (clamped 5–8) drawn only from the selected topics, topics taking turns, never-practised drills first → **Finish Session** → **Session Summary** per topic: curriculum coverage (*3 of 14 exercises completed — 21%*) and the session's average star rating (*★★☆*, from the unchanged star rules) → **Practice Again (Next Set)** or **Back to Topics**. Session metrics live in memory (the tab); the topic selection is remembered in the browser. Topic/session logic is the pure module `public/curriculum.js`; evaluation (`public/scoring.js`, `api/coach.js`) is untouched by it.
 
 ## Architecture
 
@@ -127,7 +152,8 @@ sequenceDiagram
 | Spoken-phoneme candidates (`NBestPhonemes`) | 5 | not requested (Azure documents them for `en-US` only), so drifts can't say *heard /s/* |
 | Prosody score | on | on (Azure's docs say `en-US` only, but the live service returns it for `en-GB` too) |
 | Target-sound gate | per phoneme | per phoneme if Azure names the phonemes, otherwise per target word |
-| Model voice (**Listen**) | best installed `en-US` voice (e.g. Samantha) | best installed `en-GB` voice (e.g. Daniel); if none is installed the hint says so and the closest English voice is used |
+| Model voice (**Listen**) | Azure neural `en-US-JennyNeural` | Azure neural `en-GB-SoniaNeural` |
+| Offline fallback voice | best installed `en-US` system voice (e.g. Samantha) | best installed `en-GB` system voice (e.g. Daniel, tagged `en-GB` or `en_GB`, or matched by name) |
 | Coaching prompt | General American placement | Standard Southern British / RP placement |
 
 **Switching accent re-scores the same recording.** Every recording is also captured as 16 kHz WAV in the browser (never uploaded anywhere except Azure). When the learner changes the accent while a result is on screen, that WAV is sent to Azure again with the new benchmark and the result, tip and badge (*scored as 🇬🇧 RP*) update in place — so the effect of the toggle is visible immediately. Without a usable recording, the stale result is cleared and the learner is asked to record again.
@@ -171,7 +197,7 @@ The GenAm benchmark does notice a British accent (e.g. *her* 88), but the RP ben
 | GD-06 | `en-GB`-style result with unnamed phonemes; non-target *and* is red | word-level gate (weakest 84) · ★★★ · tip still triggered · prosody n/a |
 
 ```bash
-npm test             # 17 handler unit tests (mocked network) + golden evals
+npm test             # 52 unit tests (handlers, diagnostic, coaching status, curriculum/sessions) + golden evals
 npm run eval         # golden evals only
 npm run eval:live    # also hits a running /api/coach with real Groq and checks the LLM output
                      # contract: { sound, tip }, tip 1–2 sentences ≤ 240 chars, no word pairs or
@@ -247,9 +273,12 @@ public/
   index.html          UI: accent switcher, card flow, mic control, results + inline tip, summary dialog
   app.js              orchestration: content → SDK → scoring → UI → coach → CSV
   scoring.js          pure analysis (UMD: browser + Node)
-src/phrases.json      content library (source of truth; published to public/data/ at build)
+content/curriculum.csv  curriculum source of truth (topics + exercises); content/diagnostics.json (11 paragraphs)
+src/phrases.json      generated from the CSV (tests/evals); published as public/data/curriculum.json
+public/curriculum.js  pure topic ranking, session queue and session report (UMD)
 evals/                golden_dataset.json + run-evals.js
 tests/api.test.js     handler tests with mocked fetch (node:test)
+tests/diagnostic.test.js  diagnostic profile, exercise ranking, /api/coach diagnostic mode
 scripts/              build.js (validate + publish content), dev-server.js
 vercel.json           build, function limits, security headers
 ```
@@ -261,7 +290,7 @@ Audio goes straight from the browser to Azure for scoring and is never sent to o
 ## Known limitations & next steps
 
 - **British RP depth.** `en-GB` scoring works, but Azure documents IPA phoneme names, spoken-phoneme candidates and prosody for `en-US` only, so the British path may gate per word and can't name the substituted sound. The content itself (target words, cues) hasn't had separate RP QA yet, as the program document requires.
-- **Browser TTS for model audio.** Free and instant, but voice quality varies by OS. The next step is Azure neural TTS with the same token.
+- **Model audio uses Azure neural voices.** Browser voices load asynchronously and depend on the OS (an empty voice list at first, `en_GB` vs `en-GB` tags, joke voices tagged `en-GB`), so the browser voice is now only a fallback: it waits for the voice list, matches the dropdown's accent by locale, prefix or name, and skips novelty voices. Neural audio is cached per phrase, so each phrase is synthesized at most once per accent and session (Azure's free tier includes 0.5M TTS characters a month).
 - **Per-instance rate limits** (see Security model).
 - **No persistence by design** (MVP scope): mastery tracking across sessions and the 3×3-star rule from the program document are next.
 - **Tailwind via CDN** keeps the repo build-free. For production at scale, compile it at build time to remove the runtime and the jsDelivr dependency.

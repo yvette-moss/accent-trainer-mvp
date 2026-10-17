@@ -30,6 +30,7 @@ if (fs.existsSync(envPath)) {
   }
 }
 
+execFileSync(process.execPath, [path.join(__dirname, 'csv-to-json.js')], { stdio: 'inherit' });
 execFileSync(process.execPath, [path.join(__dirname, 'build.js')], { stdio: 'inherit' });
 
 const MIME = {

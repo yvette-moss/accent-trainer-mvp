@@ -1,0 +1,455 @@
+[
+  {
+    "id": "diag_01",
+    "title": "Team Briefing",
+    "theme": "Workplace",
+    "text": "On Thursday morning, thirty-three team members met to review their quarterly growth. Although the schedule was tight, everyone stayed very focused and positive. We walked through the healthy changes planned for the upcoming sprint, breathing fresh energy into our daily workflow.",
+    "target_sounds": [
+      "/θ/",
+      "/ð/",
+      "/w/",
+      "/v/"
+    ],
+    "target_words": {
+      "/θ/": [
+        "thursday",
+        "thirty",
+        "three",
+        "growth",
+        "through",
+        "healthy"
+      ],
+      "/ð/": [
+        "their",
+        "although",
+        "the",
+        "breathing"
+      ],
+      "/w/": [
+        "was",
+        "everyone",
+        "we",
+        "walked",
+        "workflow",
+        "quarterly"
+      ],
+      "/v/": [
+        "review",
+        "everyone",
+        "very",
+        "positive"
+      ]
+    }
+  },
+  {
+    "id": "diag_02",
+    "title": "Winter Commute",
+    "theme": "Travel & Weather",
+    "text": "They drove west toward the valley while the cold autumn wind rattled the windows. Heavy clouds hovered over the village, but the driver remained very calm. Breathing the crisp evening air, both travelers felt relief as they approached their brother's warm cottage.",
+    "target_sounds": [
+      "/w/",
+      "/v/",
+      "/ð/"
+    ],
+    "target_words": {
+      "/w/": [
+        "west",
+        "while",
+        "wind",
+        "windows",
+        "warm"
+      ],
+      "/v/": [
+        "drove",
+        "valley",
+        "heavy",
+        "hovered",
+        "over",
+        "village",
+        "driver",
+        "very",
+        "evening",
+        "travelers"
+      ],
+      "/ð/": [
+        "they",
+        "the",
+        "breathing",
+        "their",
+        "brother's"
+      ]
+    }
+  },
+  {
+    "id": "diag_03",
+    "title": "Architecture Review",
+    "theme": "Design & Precision",
+    "text": "This project requires thorough thinking and clean execution from start to finish. Without proper research, a fragile structure will collapse under sudden pressure. We must measure the depth, calculate the true weight, and breathe stability into the overall plan.",
+    "target_sounds": [
+      "/θ/",
+      "/ð/",
+      "/r/",
+      "/p/"
+    ],
+    "target_words": {
+      "/θ/": [
+        "thorough",
+        "thinking",
+        "depth"
+      ],
+      "/ð/": [
+        "this",
+        "without",
+        "the",
+        "breathe"
+      ],
+      "/r/": [
+        "project",
+        "requires",
+        "from",
+        "proper",
+        "research",
+        "fragile",
+        "structure",
+        "pressure",
+        "true"
+      ],
+      "/p/": [
+        "project",
+        "proper",
+        "depth",
+        "collapse",
+        "pressure",
+        "plan"
+      ]
+    }
+  },
+  {
+    "id": "diag_04",
+    "title": "Coastal Market",
+    "theme": "Everyday Life",
+    "text": "Six busy fishermen leave the dock each morning to fill their green nets in the deep sea. As the sun rises, brisk breezes sweep across the beach. People visit the lively fish market to choose fresh meals, praising the quality and reasonable prices.",
+    "target_sounds": [
+      "/iː/",
+      "/ɪ/",
+      "/s/",
+      "/z/"
+    ],
+    "target_words": {
+      "/iː/": [
+        "leave",
+        "each",
+        "green",
+        "deep",
+        "sea",
+        "breezes",
+        "sweep",
+        "beach",
+        "people",
+        "meals",
+        "reasonable"
+      ],
+      "/ɪ/": [
+        "six",
+        "busy",
+        "fishermen",
+        "fill",
+        "in",
+        "brisk",
+        "visit",
+        "fish"
+      ],
+      "/s/": [
+        "six",
+        "sea",
+        "sun",
+        "brisk",
+        "sweep",
+        "across",
+        "prices"
+      ],
+      "/z/": [
+        "busy",
+        "rises",
+        "breezes",
+        "visit",
+        "choose",
+        "meals",
+        "praising",
+        "reasonable",
+        "prices"
+      ]
+    }
+  },
+  {
+    "id": "diag_05",
+    "title": "Financial Strategy",
+    "theme": "Business & Numbers",
+    "text": "I think several investors missed the central theme during the summit yesterday. Some thought the math was simple, while others saw serious risks in the fifth proposal. Passing this milestone demands disciplined habits and trustworthy financial advice.",
+    "target_sounds": [
+      "/θ/",
+      "/s/",
+      "/ð/"
+    ],
+    "target_words": {
+      "/θ/": [
+        "think",
+        "theme",
+        "thought",
+        "math",
+        "fifth"
+      ],
+      "/s/": [
+        "several",
+        "investors",
+        "missed",
+        "central",
+        "summit",
+        "yesterday",
+        "some",
+        "simple",
+        "saw",
+        "serious",
+        "risks",
+        "passing",
+        "milestone",
+        "advice"
+      ],
+      "/ð/": [
+        "the",
+        "others",
+        "this",
+        "trustworthy"
+      ]
+    }
+  },
+  {
+    "id": "diag_06",
+    "title": "Innovation Lab",
+    "theme": "Technology",
+    "text": "Our engineering branch launched a major challenge to bridge modern technology and practical design. Each specialist pitched a unique solution, showing sharp vision and genuine passion. Watching the digital dashboard change in real time inspired the entire organization.",
+    "target_sounds": [
+      "/tʃ/",
+      "/dʒ/",
+      "/ʃ/"
+    ],
+    "target_words": {
+      "/tʃ/": [
+        "branch",
+        "launched",
+        "challenge",
+        "each",
+        "pitched",
+        "watching",
+        "change"
+      ],
+      "/dʒ/": [
+        "engineering",
+        "major",
+        "challenge",
+        "bridge",
+        "technology",
+        "genuine",
+        "digital",
+        "change"
+      ],
+      "/ʃ/": [
+        "specialist",
+        "solution",
+        "showing",
+        "sharp",
+        "passion",
+        "dashboard",
+        "organization"
+      ]
+    }
+  },
+  {
+    "id": "diag_07",
+    "title": "Global Logistics",
+    "theme": "Operations",
+    "text": "Clear communication really helps global transport lines operate smoothly across several borders. When freight carriers deliver critical materials on schedule, local suppliers rarely face sudden delays. Our role is to resolve complex logistics problems quickly.",
+    "target_sounds": [
+      "/r/",
+      "/l/"
+    ],
+    "target_words": {
+      "/r/": [
+        "really",
+        "transport",
+        "operate",
+        "across",
+        "freight",
+        "carriers",
+        "critical",
+        "materials",
+        "rarely",
+        "role",
+        "resolve",
+        "problems"
+      ],
+      "/l/": [
+        "clear",
+        "really",
+        "helps",
+        "global",
+        "lines",
+        "deliver",
+        "materials",
+        "local",
+        "suppliers",
+        "rarely",
+        "role",
+        "resolve",
+        "complex",
+        "logistics",
+        "problems",
+        "quickly"
+      ]
+    }
+  },
+  {
+    "id": "diag_08",
+    "title": "Health & Nutrition",
+    "theme": "Wellness",
+    "text": "Maintaining healthy teeth and bones requires balanced nutrition throughout one's youth. Athletes often drink thick fruit smoothies with fresh seeds and oats. Experts emphasize that consistent routines, rest, and truthful habits matter far more than quick fixes.",
+    "target_sounds": [
+      "/θ/",
+      "/z/"
+    ],
+    "target_words": {
+      "/θ/": [
+        "healthy",
+        "teeth",
+        "throughout",
+        "youth",
+        "athletes",
+        "thick",
+        "truthful"
+      ],
+      "/z/": [
+        "bones",
+        "requires",
+        "smoothies",
+        "seeds",
+        "emphasize",
+        "routines",
+        "fixes"
+      ]
+    }
+  },
+  {
+    "id": "diag_09",
+    "title": "Valley Expedition",
+    "theme": "Nature & Travel",
+    "text": "We viewed the vast valley from the west window of the wooden railway car. Every visitor took valuable photos of the wolves wandering through the wild woods. The crew provided warm food and guided everyone safely along the scenic route.",
+    "target_sounds": [
+      "/w/",
+      "/v/"
+    ],
+    "target_words": {
+      "/w/": [
+        "we",
+        "west",
+        "window",
+        "wooden",
+        "railway",
+        "wolves",
+        "wandering",
+        "wild",
+        "woods",
+        "warm",
+        "everyone"
+      ],
+      "/v/": [
+        "viewed",
+        "vast",
+        "valley",
+        "every",
+        "visitor",
+        "valuable",
+        "wolves",
+        "provided",
+        "everyone"
+      ]
+    }
+  },
+  {
+    "id": "diag_10",
+    "title": "Civic Dialogue",
+    "theme": "Community",
+    "text": "They gathered together to determine whether the city should rebuild the northern pathway. Although their opinions differed, neither side wanted further conflict with their neighbors. Breathing together in silence, they found common ground before the night was over.",
+    "target_sounds": [
+      "/ð/"
+    ],
+    "target_words": {
+      "/ð/": [
+        "they",
+        "gathered",
+        "together",
+        "whether",
+        "the",
+        "northern",
+        "although",
+        "their",
+        "neither",
+        "further",
+        "breathing"
+      ]
+    }
+  },
+  {
+    "id": "diag_11",
+    "title": "Weekend Trip",
+    "theme": "Travel & Plans",
+    "text": "Last Tuesday, Kate packed her bag and left for a technical camp. The trip back was tense: ten people sat at the back of a crowded taxi. Still, everyone kept calm, checked the map, and had a fantastic time.",
+    "target_sounds": [
+      "/æ/",
+      "/ɛ/",
+      "/t/",
+      "/k/"
+    ],
+    "target_words": {
+      "/æ/": [
+        "last",
+        "packed",
+        "bag",
+        "camp",
+        "back",
+        "sat",
+        "taxi",
+        "map",
+        "had",
+        "fantastic"
+      ],
+      "/ɛ/": [
+        "left",
+        "technical",
+        "tense",
+        "ten",
+        "everyone",
+        "kept",
+        "checked"
+      ],
+      "/t/": [
+        "tuesday",
+        "technical",
+        "trip",
+        "tense",
+        "ten",
+        "taxi",
+        "time"
+      ],
+      "/k/": [
+        "kate",
+        "camp",
+        "technical",
+        "crowded",
+        "calm",
+        "kept",
+        "checked",
+        "taxi"
+      ]
+    }
+  }
+]

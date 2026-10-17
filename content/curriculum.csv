@@ -1,0 +1,126 @@
+﻿id,topic_id,topic_title,target_sound,text,type,focus_words,pedagogical_cue
+B1-S01,th_unvoiced,Unvoiced /θ/ Sound,θ|ð,Think outside the box.,phrase,think,"'Think' is voiceless /θ/ — air only. 'the' is voiced /ð/ — same tongue, add a buzz."
+B1-S02,th_unvoiced,Unvoiced /θ/ Sound,θ,Through thick and thin.,phrase,through|thick|thin,Three /θ/ starts in a row: reset the tongue tip to your teeth before each one.
+B1-S03,th_unvoiced,Unvoiced /θ/ Sound,θ|ð|w,Worth the extra effort.,phrase,worth,"Round the lips for /w/, finish 'worth' with air at the teeth, then glide into a voiced 'the'."
+B1-S04,th_unvoiced,Unvoiced /θ/ Sound,θ,Healthy teeth and gums.,phrase,healthy|teeth,Don't let the final /θ/ in 'teeth' turn into /t/ or /s/ before 'and'.
+B1-P01,th_unvoiced,Unvoiced /θ/ Sound,θ|ð,I thought about thirty-three things this morning.,phrase,thought|thirty|three|things|this,"Four voiceless /θ/ starts, then a voiced /ð/ in 'this' — keep each one airy as you speed up."
+B1-P02,th_unvoiced,Unvoiced /θ/ Sound,θ|ð,The author chose a thoughtful theme.,phrase,author|thoughtful|theme,"'The' is voiced /ð/, 'author', 'thoughtful' and 'theme' are voiceless /θ/ — same tongue, different buzz."
+B1-P03,th_unvoiced,Unvoiced /θ/ Sound,θ,Her healthy tooth was throbbing throughout the night.,phrase,healthy|tooth|throbbing|throughout,Watch the final /θ/ in 'tooth' before the /w/ of 'was'.
+B1-P04,th_unvoiced,Unvoiced /θ/ Sound,θ|w,We need a thorough method for growth.,phrase,we|thorough|method|growth,Keep the /θ/ in 'method' and the final /θ/ in 'growth' — they are easy to drop at speed.
+B1-C04,th_unvoiced,Unvoiced /θ/ Sound,θ|t,Three tall trees grew along the track.,contrast,three|trees|tall|track,"three = friction you can stretch; tall, trees, track = a quick stop."
+TH-U01,th_unvoiced,Unvoiced /θ/ Sound,θ,Thanks for your help on Thursday.,phrase,thanks|thursday,Start 'thanks' and 'Thursday' with the tongue tip lightly between the teeth and a soft push of air — no /t/ tap.
+TH-U02,th_unvoiced,Unvoiced /θ/ Sound,θ,"Happy birthday, have a wonderful month!",phrase,birthday|month,The /θ/ sits in the middle of 'birthday' and at the end of 'month': keep the air flowing at the teeth.
+TH-U03,th_unvoiced,Unvoiced /θ/ Sound,θ,Both of us think it's worth it.,phrase,both|think|worth,"Three voiceless /θ/ sounds: finish 'both' and 'worth' with air at the teeth, not a /t/ or /s/."
+TH-U04,th_unvoiced,Unvoiced /θ/ Sound,θ,Nothing is healthier than a good night's sleep.,phrase,nothing|healthier,"Keep 'nothing' airy at the teeth, and don't swap the /θ/ in 'healthier' for an /f/."
+TH-U05,th_unvoiced,Unvoiced /θ/ Sound,θ,My math teacher is very thorough.,phrase,math|thorough,"'Math' ends in /θ/, not /s/; 'thorough' starts with it — tongue out, gentle air."
+B1-S05,th_voiced,Voiced /ð/ Sound,ð,Breathe in fresh air.,phrase,breathe,'Breathe' ends in voiced /ð/ — feel the buzz on your tongue as you link into 'in'.
+B1-S06,th_voiced,Voiced /ð/ Sound,ð,Smooth as leather.,phrase,smooth|leather,"Two voiced /ð/ sounds: keep the tongue light at the teeth, never a hard /d/."
+B1-P05,th_voiced,Voiced /ð/ Sound,ð|θ|w,They walked together through the chilly autumn weather.,phrase,they|walked|together|through|weather,"Voiced /ð/ in 'they', 'together', 'the', 'weather'; voiceless /θ/ only in 'through'."
+B1-P06,th_voiced,Voiced /ð/ Sound,ð|θ|w,"It was worthwhile, although they were tired.",phrase,was|worthwhile|although|they|were,'Although' and 'they' are voiced /ð/; 'worthwhile' hides a voiceless /θ/ right before a /w/.
+B1-C03,th_voiced,Voiced /ð/ Sound,ð|d,They dare to go there together.,contrast,they|dare|there|together,they = soft buzz at the teeth; dare = a quick tap behind the teeth.
+TH-V01,th_voiced,Voiced /ð/ Sound,ð,Let's get together this weekend.,phrase,together|this,"Voiced /ð/ in 'together' and 'this': tongue tip at the teeth, voice on, feel the buzz."
+TH-V02,th_voiced,Voiced /ð/ Sound,ð,The weather is lovely today.,phrase,weather,Keep the /ð/ in the middle of 'weather' soft and buzzing — not a hard /d/.
+TH-V03,th_voiced,Voiced /ð/ Sound,ð,My mother and father live there.,phrase,mother|father|there,Three voiced /ð/ sounds: let the tongue rest lightly on the teeth and keep your voice going.
+TH-V04,th_voiced,Voiced /ð/ Sound,ð,I'd rather stay with my brother.,phrase,rather|brother,"In 'rather' and 'brother' the /ð/ links two vowels — keep it smooth, never a /d/ or /z/."
+TH-V05,th_voiced,Voiced /ð/ Sound,ð,Those clothes are smoother than these.,phrase,those|clothes|smoother|than|these,Lots of voiced /ð/: keep the buzz at your teeth and don't let it slide into /z/.
+TH-V06,th_voiced,Voiced /ð/ Sound,ð,Breathe slowly and soothe your mind.,phrase,breathe|soothe,'Breathe' and 'soothe' end in a long voiced /ð/ — hold the buzz before the next word.
+TH-V07,th_voiced,Voiced /ð/ Sound,ð,Is it this one or that one?,phrase,this|that,"Start 'this' and 'that' with a light voiced buzz at the teeth, not a /d/."
+TH-V08,th_voiced,Voiced /ð/ Sound,ð,"Either way, they will be there.",phrase,either|they|there,"'Either', 'they' and 'there': tongue tip touches the teeth, voice on, then glide away."
+TH-V09,th_voiced,Voiced /ð/ Sound,ð,We did it without them.,phrase,without|them,'Without' and 'them' use a soft voiced /ð/; compare it with the hard /d/ of 'did'.
+B1-C01,th_vs_s,/θ/ vs /s/ Contrast,θ|s,I think the kitchen sink is clean.,contrast,think|sink,think = tongue at the teeth; sink = tongue behind the teeth.
+B1-C02,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Take a deep breath and pass the test.,contrast,breath|pass|test,breath ends with air between the teeth; pass and test end with a sharp hiss behind them.
+TS-01,th_vs_s,/θ/ vs /s/ Contrast,θ|s,The thick soup made me sick.,contrast,thick|sick|soup,thick = tongue between the teeth; sick and soup = tongue behind them with a sharp hiss.
+TS-02,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Think of a song to sing.,contrast,think|sing|song,think = air through the teeth; song and sing = a hiss from behind them.
+TS-03,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Walk the path and pass the gate.,contrast,path|pass,path ends with soft air at the teeth; pass ends with a hiss behind them.
+TS-04,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Her faith shows on her face.,contrast,faith|face,faith ends at the teeth; face ends with an /s/ hiss behind them.
+TS-05,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Three seats are still free.,contrast,three|seats|still,"three = tongue out, soft air; seats and still = tongue back, sharp hiss."
+TS-06,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Math class starts at seven.,contrast,math|class|starts|seven,"math = soft friction at the teeth; class, starts and seven = tongue behind the teeth."
+TS-07,th_vs_s,/θ/ vs /s/ Contrast,θ|s,"Thank you, Sam, for the seat.",contrast,thank|sam|seat,thank = tongue between the teeth; Sam and seat = tongue tucked behind them.
+TS-08,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Both sides agree on this.,contrast,both|sides,both ends with air at the teeth; sides starts with a hiss behind them.
+TS-09,th_vs_s,/θ/ vs /s/ Contrast,θ|s,My tooth hurts when I sip tea.,contrast,tooth|sip|hurts,tooth = air between the teeth; sip and hurts = a sharp /s/ behind them.
+TS-10,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Is it thin or simply small?,contrast,thin|simply|small,thin = tongue out and soft; simply and small = tongue in and hissing.
+TS-11,th_vs_s,/θ/ vs /s/ Contrast,θ|s,Thursday is the first sunny day.,contrast,thursday|sunny|first,Thursday = tongue at the teeth; sunny and first = a clean /s/ hiss.
+B1-C05,w_vs_v,W vs V Contrast,w|v,We went to view the very wide valley.,contrast,wide|view|we|went|very|valley,"/w/ = rounded lips, no teeth. /v/ = top teeth touch the lower lip."
+WV-01,w_vs_v,W vs V Contrast,w|v,The wide valley has a lovely view.,contrast,wide|valley|view,"wide = rounded lips, no teeth; valley and view = top teeth on the lower lip."
+WV-02,w_vs_v,W vs V Contrast,w|v,It's very warm this evening.,contrast,warm|very|evening,warm = lips rounded like 'oo'; very and evening = teeth touch the lip and buzz.
+WV-03,w_vs_v,W vs V Contrast,w|v,We visited a village by the river.,contrast,we|visited|village|river,"we = rounded lips; visited, village and river = teeth on the lower lip."
+WV-04,w_vs_v,W vs V Contrast,w|v,The wind moved the vines.,contrast,wind|vines|moved,wind = round your lips; vines and moved = teeth gently on the lower lip.
+WV-05,w_vs_v,W vs V Contrast,w|v,Would you like a vanilla waffle?,contrast,would|vanilla|waffle,would and waffle = rounded lips; vanilla = teeth on the lip with a buzz.
+WV-06,w_vs_v,W vs V Contrast,w|v,Her voice was warm and lovely.,contrast,warm|voice|was|lovely,warm and was = rounded lips; voice and lovely = teeth on the lower lip.
+WV-07,w_vs_v,W vs V Contrast,w|v,We have five weeks of vacation.,contrast,we|five|weeks|vacation|have,"we and weeks = rounded lips; five, have and vacation = teeth touch the lip."
+WV-08,w_vs_v,W vs V Contrast,w|v,Wear a vest when it's windy.,contrast,wear|vest|when|windy,"wear, when and windy = lips round, teeth away; vest = teeth on the lip."
+WV-09,w_vs_v,W vs V Contrast,w|v,Every Wednesday we watch a movie.,contrast,wednesday|every|we|watch|movie,"Wednesday, we and watch = rounded lips; every and movie = teeth on the lower lip."
+WV-10,w_vs_v,W vs V Contrast,w|v,I'll wait for the next van.,contrast,wait|van,wait = start with rounded lips; van = start with teeth on the lower lip.
+WV-11,w_vs_v,W vs V Contrast,w|v,We value what we have.,contrast,we|value|what|have,"we and what = rounded lips; value and have = teeth on the lip, voice on."
+SZ-01,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,Her business is doing really well.,contrast,business|is,In 'business' the first s is a buzzing /z/ and the last a hissing /s/ — feel the switch in your throat.
+SZ-02,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,The old houses rise above the streets.,contrast,houses|streets|rise,'Houses' and 'rise' buzz with /z/; 'streets' hisses with /s/ — hand on your throat to feel it.
+SZ-03,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,A cool breeze rises from the sea.,contrast,breeze|sea|rises,Hold the buzz to the very end of 'breeze' and 'rises'; 'sea' is pure air.
+SZ-04,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,She always says yes to new ideas.,contrast,says|yes|ideas|always,'Says' starts with /s/ and ends with /z/; 'yes' ends with a clean /s/ hiss.
+SZ-05,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,Prices rise as the season changes.,contrast,prices|season|rise|changes,"Keep the voice on for the endings of 'prices' and 'changes' — /ɪz/, not /ɪs/."
+SZ-06,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,He loses his keys twice a week.,contrast,loses|twice|keys|his,"'Loses', 'his' and 'keys' end in voiced /z/; 'twice' ends with a sharp /s/."
+SZ-07,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,These sauces taste amazing.,contrast,sauces|taste|amazing|these,'Sauces' starts with /s/ and ends with /ɪz/; keep 'amazing' buzzy in the middle.
+SZ-08,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,The bus was full of tourists.,contrast,was|bus|tourists,'Bus' ends with a hiss; 'was' ends with a buzz — don't devoice it to 'wass'.
+SZ-09,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,Close the door and choose a seat.,contrast,close|seat|choose,The verb 'close' and 'choose' end in buzzing /z/; 'seat' starts with a hiss.
+SZ-10,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,My nieces visit us on Sundays.,contrast,nieces|us|visit|sundays,'Visit' and 'Sundays' carry a voiced /z/; 'us' ends with an unvoiced /s/.
+SZ-11,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,She sells roses at the market.,contrast,roses|sells,'Sells' starts with /s/ and ends with /z/; both s letters in 'roses' buzz.
+SZ-12,s_vs_z,/s/ vs /z/ & Final -s Endings,s|z,Use this rice for the dishes.,contrast,use|rice|dishes,"The verb 'use' ends with a buzz, 'rice' with a hiss, and 'dishes' with /ɪz/."
+IV-01,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,I feel you should fill the form.,contrast,feel|fill,"'Feel' = long, smiling /iː/; 'fill' = short, relaxed /ɪ/ with a looser jaw."
+IV-02,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,Please leave if you live nearby.,contrast,leave|live|please,Stretch 'leave' and 'please'; keep 'live' short and lax.
+IV-03,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,Each scene in this film works.,contrast,scene|film|each|this,Long tense /iː/ in 'each' and 'scene'; short lax /ɪ/ in 'this' and 'film'.
+IV-04,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,We need to sleep a little.,contrast,sleep|little|need,Hold 'need' and 'sleep' longer with spread lips; 'little' is quick and relaxed.
+IV-05,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,Keep the ship clean and quick.,contrast,keep|ship|clean|quick,'Keep' and 'clean' are long and tense; 'ship' and 'quick' are short — not 'sheep'.
+IV-06,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,Please sit in your seat.,contrast,seat|sit|please,'Seat' is long with smiling lips; 'sit' is short with a relaxed tongue.
+IV-07,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,The team will win this week.,contrast,team|win|week|will,Long /iː/ in 'team' and 'week'; short /ɪ/ in 'will' and 'win'.
+IV-08,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,Eat a bit of cheese.,contrast,eat|bit|cheese,Stretch 'eat' and 'cheese'; cut 'bit' short so it doesn't become 'beat'.
+IV-09,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,She bought cheap chips today.,contrast,cheap|chips,'Cheap' = long /iː/; 'chips' = short /ɪ/ — the vowel length carries the meaning.
+IV-10,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,Read the list and keep it.,contrast,read|list|keep|it,Long in 'read' and 'keep'; short and relaxed in 'list' and 'it'.
+IV-11,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,"Meet me at six, please.",contrast,meet|six|please,Smile and hold 'meet' and 'please'; 'six' is short with a looser jaw.
+IV-12,i_vs_ih,/iː/ vs /ɪ/ Vowel Length,i|ɪ,The heat makes it hard to think.,contrast,heat|it|think,'Heat' is long and tense; 'it' and 'think' use the short lax /ɪ/.
+PA-01,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Let's change the project action plan.,phrase,change|project|action,"Round your lips slightly for /tʃ/, /dʒ/ and /ʃ/; 'change' starts with /tʃ/ and ends with /dʒ/."
+PA-02,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Check the bridge before the big shift.,phrase,check|bridge|shift,'Check' = stop + hiss /tʃ/; 'bridge' ends in voiced /dʒ/; 'shift' = smooth /ʃ/ with no stop.
+PA-03,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Each manager shares a short report.,phrase,each|manager|shares|short,"Lips pushed forward: /tʃ/ in 'each', /dʒ/ in 'manager', /ʃ/ in 'shares' and 'short'."
+PA-04,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Join the chat and share your ideas.,phrase,join|chat|share,"'Join' = voiced /dʒ/, 'chat' = unvoiced /tʃ/, 'share' = /ʃ/ with no stop at the start."
+PA-05,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,She just changed the schedule.,phrase,she|just|changed|schedule,Keep /ʃ/ in 'she' soft and rounded; 'just' and 'schedule' carry a voiced /dʒ/.
+PA-06,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Choose a large dish for lunch.,phrase,choose|large|dish|lunch,'Choose' and 'lunch' have /tʃ/; 'large' ends with /dʒ/; 'dish' ends with a long /ʃ/.
+PA-07,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,The coach shared a generous suggestion.,phrase,coach|shared|generous|suggestion,"'Coach' ends with /tʃ/, 'shared' starts with /ʃ/, 'generous' starts with voiced /dʒ/."
+PA-08,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Watch the jet engine in action.,phrase,watch|jet|engine|action,"'Watch' ends in /tʃ/, 'jet' and 'engine' use /dʒ/, and 'action' hides a /ʃ/."
+PA-09,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,This situation needs a major change.,phrase,situation|major|change,'Situation' has /tʃ/ then /ʃ/; 'major' has /dʒ/ — keep the lips slightly rounded.
+PA-10,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Teachers judge each special project fairly.,phrase,teachers|judge|each|special|project,"/tʃ/ in 'teachers' and 'each', /dʒ/ in 'judge' and 'project', /ʃ/ in 'special'."
+PA-11,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,I enjoy fresh cheese and juice.,phrase,enjoy|fresh|cheese|juice,'Enjoy' and 'juice' start with voiced /dʒ/; 'cheese' with /tʃ/; 'fresh' ends in /ʃ/.
+PA-12,postalveolar,"/ʃ/, /tʃ/ & /dʒ/ Sounds",ʃ|tʃ|dʒ,Should we charge the budget now?,phrase,should|charge|budget,'Should' = soft /ʃ/; 'charge' = /tʃ/ … /dʒ/; 'budget' = voiced /dʒ/ in the middle.
+RL-01,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,The results are really clear.,contrast,results|clear|really,For /r/ pull the tongue back without touching anything; for /l/ press the tip behind the top teeth.
+RL-02,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,The world is a large place.,contrast,large|world|place,No rolled r in 'large': pull the tongue back; let the /l/ in 'world' and 'place' touch the ridge.
+RL-03,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,Please read the list aloud.,contrast,read|list|please|aloud,"'Read' = lips slightly round, tongue touching nothing; 'list' = tongue tip touching the ridge."
+RL-04,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,Light rain fell all morning.,contrast,rain|light|fell|morning,"'Rain' = tongue pulled back, lips slightly round; 'light' and 'fell' = tongue tip on the ridge."
+RL-05,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,The long road leads to Rome.,contrast,road|long|leads|rome,"'Road' and 'Rome' = no tap, no trill; 'long' and 'leads' = tip touching behind the teeth."
+RL-06,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,"Correct the wrong lines, please.",contrast,wrong|lines|correct|please,'Wrong' starts with a smooth English /r/ — never a trill; 'lines' starts with a clear /l/.
+RL-07,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,I really like your new glasses.,contrast,really|like|glasses,"'Really' has /r/ then /l/: tongue back and free, then tip up to the ridge."
+RL-08,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,Fresh fruit grows in the valley.,contrast,fresh|valley|fruit|grows,"Keep the /r/ in 'fresh', 'fruit' and 'grows' soft and untrilled; touch the ridge for 'valley'."
+RL-09,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,Clear rules help everyone learn.,contrast,rules|clear|help|learn,'Rules' starts with /r/ and ends with /l/ — tongue from back and free to tip-up.
+RL-10,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,The library is closed on Fridays.,contrast,fridays|library|closed,"'Library' alternates /l/ and /r/ — tip up for l, tongue back for r, no trills."
+RL-11,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,Turn right at the traffic light.,contrast,right|light|traffic,"'Right' vs 'light': only the tongue tip changes — free for /r/, touching for /l/."
+RL-12,r_vs_l,/r/ vs /l/ Liquids,ɹ|l,Our free plan is really flexible.,contrast,free|plan|really|flexible,In 'free' the /r/ follows /f/ smoothly; in 'plan' and 'flexible' the /l/ follows /p/ and /f/.
+PK-01,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,We planned two projects this quarter.,phrase,planned|projects|two|quarter,"Release a small puff of air after /p/, /t/ and /k/ at the start of a stressed syllable."
+PK-02,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Keep track of the sprint plan.,phrase,keep|track|sprint|plan,"Puff of air on 'keep', 'track' and 'plan'; after /s/ in 'sprint' the /p/ has no puff."
+PK-03,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Please take a quick break.,phrase,please|take|quick|break,"Hold a tissue in front of your mouth: it should move on 'please', 'take' and 'quick'."
+PK-04,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,The team completed the task on time.,phrase,team|completed|task|time,Aspirate the /t/ in 'team' and 'time' and the /k/ in 'completed' — a short burst of air.
+PK-05,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Put the cups on the top shelf.,phrase,put|cups|top,"Strong puff on 'put', 'cups' and 'top'; don't let them sound like 'b', 'g' or 'd'."
+PK-06,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Click the play button twice.,phrase,click|play|button|twice,"'Click', 'play' and 'twice' start with aspirated stops — air first, then the vowel."
+PK-07,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Coffee prices went up today.,phrase,coffee|prices|today,"Breathy release on /k/ in 'coffee', /p/ in 'prices' and /t/ in 'today'."
+PK-08,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Pick a topic for the talk.,phrase,pick|topic|talk,"Three aspirated starts: 'pick', 'topic', 'talk' — feel the air on your hand."
+PK-09,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Our client expects a clear plan.,phrase,client|expects|clear|plan,In /kl/ and /pl/ the puff makes the /l/ slightly breathy — don't add a vowel between.
+PK-10,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Split the cake into ten pieces.,phrase,split|cake|ten|pieces,"'Cake', 'ten' and 'pieces' get a puff; after /s/ in 'split' the /p/ is unaspirated."
+PK-11,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,The train stops at Park Street.,phrase,train|stops|park|street,"Aspirate 'train' and 'Park'; 'stops' and 'street' start with /s/, so no puff there."
+PK-12,stops,Aspirated /p/ /t/ /k/ in Clusters,p|t|k,Tell Kate the price is correct.,phrase,tell|kate|price|correct,"Puff of air on 'tell', 'Kate', 'price' and 'correct' — no voicing until the vowel."
+AE-01,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,My bed is not that bad.,contrast,bad|bed|that,"'Bad' = jaw drops low, mouth wide; 'bed' = jaw only half open."
+AE-02,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,Set the bag on that desk.,contrast,bag|set|that|desk,Open wide for 'bag' and 'that'; keep the jaw higher for 'set' and 'desk'.
+AE-03,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,I had a headache yesterday.,contrast,had|headache|yesterday,"'Had' = wide, low /æ/; 'head' and 'yes' = mid /ɛ/."
+AE-04,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,Pack your pens and maps.,contrast,pack|pens|maps,"'Pack' and 'maps' = drop the jaw; 'pens' = smaller mouth, tongue higher."
+AE-05,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,Send the plan to Anna.,contrast,plan|send|anna,'Plan' and 'Anna' open wide like a yawn; 'send' stays mid-open.
+AE-06,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,My dad left a message.,contrast,dad|left|message,'Dad' = low and wide; 'left' and 'message' = mid /ɛ/ — don't make them the same.
+AE-07,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,That pan is better than this pen.,contrast,pan|pen|better|that,"'Pan' vs 'pen': drop the jaw for the first, lift it for the second."
+AE-08,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,Help me pack this bag.,contrast,pack|help|bag,"'Help' is mid /ɛ/; 'pack' and 'bag' are low, wide /æ/."
+AE-09,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,The cat sat next to Ben.,contrast,cat|ben|sat|next,'Cat' and 'sat' = jaw low; 'next' and 'Ben' = jaw mid.
+AE-10,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,Every family has a plan.,contrast,family|every|has|plan,"'Every' starts with mid /ɛ/; 'family', 'has' and 'plan' open wide with /æ/."
+AE-11,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,Grab a snack before the test.,contrast,grab|test|snack,'Grab' and 'snack' = wide /æ/; 'test' = mid /ɛ/.
+AE-12,ae_vs_e,/æ/ vs /ɛ/ (bad vs bed),æ|ɛ,He sent the man a letter.,contrast,man|sent|letter,'Man' = wide /æ/; 'sent' and 'letter' = mid /ɛ/ — 'man' and 'men' must differ.

@@ -34,6 +34,7 @@
     .chip[aria-pressed="true"] { box-shadow: 0 0 0 2px currentColor; }
     .chip:focus-visible, button:focus-visible { outline: 3px solid #14b8a6; outline-offset: 2px; }
     dialog::backdrop { background: rgba(15, 23, 42, .55); backdrop-filter: blur(2px); }
+    .tab[aria-selected="true"] { background: #fff; color: #115e59; box-shadow: 0 1px 2px rgba(15, 23, 42, .08), 0 0 0 1px rgba(15, 23, 42, .06); }
     .ipa { font-family: 'Charis SIL', 'Doulos SIL', 'Gentium Plus', 'Lucida Sans Unicode', 'Arial Unicode MS', ui-serif, serif; }
     @media (prefers-reduced-motion: reduce) { .animate-pulsering, .animate-pulse, .animate-spin { animation: none !important; } }
   </style>
@@ -47,19 +48,27 @@
       <div class="w-10 h-10 rounded-xl bg-brand-700 text-white grid place-items-center font-display text-xl shadow-sm" aria-hidden="true">θ</div>
       <div>
         <h1 class="text-lg font-semibold leading-tight">Accent Coach</h1>
-        <p class="text-xs text-slate-500">B1 · /θ/ /ð/ &amp; contrast drills</p>
+        <p class="text-xs text-slate-500">B1 · 10 sound topics</p>
       </div>
     </div>
-    <div class="flex items-center gap-2">
+    <div class="flex flex-wrap items-center gap-2">
       <label for="accentSelect" class="sr-only">Target accent</label>
       <select id="accentSelect" title="Target accent: scoring benchmark and model voice"
         class="text-sm font-medium pl-2.5 pr-8 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
         <option value="en-US" selected>🇺🇸 General American</option>
         <option value="en-GB">🇬🇧 British (RP)</option>
       </select>
+      <button id="planBtn" type="button" hidden
+        class="text-sm font-medium px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+        Topics
+      </button>
+      <button id="retakeBtn" type="button" hidden title="Clear your diagnostic result and take the test again"
+        class="text-sm font-medium px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
+        Retake Diagnostic
+      </button>
       <button id="finishBtn" type="button"
         class="text-sm font-medium px-3 py-2 rounded-lg border border-slate-200 bg-white hover:bg-slate-50 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">
-        Finish &amp; Export
+        Finish Session
       </button>
     </div>
   </header>
@@ -70,8 +79,75 @@
     <div id="notice" role="alert" hidden
       class="mt-4 rounded-xl border px-4 py-3 text-sm"></div>
 
+    <!-- ============ Onboarding: diagnostic intro ============ -->
+    <section id="diagnosticIntro" class="mt-4" hidden aria-labelledby="diagTitle">
+      <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">Step 1 of 2 · About 1 minute</p>
+      <h2 id="diagTitle" class="mt-1 text-2xl font-semibold text-slate-900">Pronunciation Diagnostic Test</h2>
+      <p id="diagIntroText" class="mt-2 text-sm text-slate-600"></p>
+    </section>
+
+    <!-- ============ Onboarding: building the report ============ -->
+    <section id="diagnosticStatus" class="mt-5 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 p-6 sm:p-8" hidden aria-live="polite">
+      <p class="font-semibold text-slate-800">Building your personalised plan…</p>
+      <p class="mt-1 text-sm text-slate-500">Checking each target sound and writing your diagnostic report.</p>
+      <div class="mt-4 space-y-2" aria-hidden="true">
+        <div class="h-2.5 rounded bg-slate-200 animate-pulse w-11/12"></div>
+        <div class="h-2.5 rounded bg-slate-200 animate-pulse w-9/12"></div>
+        <div class="h-2.5 rounded bg-slate-200 animate-pulse w-10/12"></div>
+      </div>
+    </section>
+
+    <!-- ============ Your Personalized Plan ============ -->
+    <section id="planView" class="mt-4" hidden aria-labelledby="planTitle">
+      <p class="text-xs font-semibold uppercase tracking-wide text-brand-700" id="planKicker">Step 2 of 2 · Your results</p>
+      <h2 id="planTitle" class="mt-1 text-2xl font-semibold text-slate-900">Your Personalized Plan</h2>
+
+      <div class="mt-4 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 p-6 sm:p-8">
+        <div id="planReport" class="space-y-3 text-[15px] leading-relaxed text-slate-700"></div>
+        <p id="planSource" class="mt-3 text-[11px] text-slate-400"></p>
+
+        <div id="planSoundsWrap" class="mt-6">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-3">Target sounds <span id="planLevelNote" class="normal-case font-normal"></span></p>
+          <div id="planSounds" class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3"></div>
+        </div>
+        <button id="takeDiagnosticBtn" type="button" hidden
+          class="mt-5 w-full px-4 py-3 rounded-xl font-medium text-white bg-brand-700 hover:bg-brand-800 shadow-sm">Take the diagnostic</button>
+      </div>
+
+      <!-- Priority topics: ranked by the diagnostic; tap a card to add/remove it from the session -->
+      <div class="mt-8 flex flex-wrap items-end justify-between gap-3">
+        <div>
+          <h3 class="text-lg font-semibold text-slate-900">Your Priority Focus Topics</h3>
+          <p id="topicsHint" class="mt-0.5 text-sm text-slate-500"></p>
+        </div>
+      </div>
+      <div id="topicGrid" class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+      <div class="mt-5 flex flex-col sm:flex-row sm:items-center gap-3">
+        <button id="startSessionBtn" type="button"
+          class="shrink-0 whitespace-nowrap px-5 py-3 rounded-xl font-medium text-white bg-brand-700 hover:bg-brand-800 shadow-sm disabled:opacity-40 disabled:cursor-not-allowed">Start Practice Session →</button>
+        <p id="sessionHint" class="text-xs text-slate-500"></p>
+      </div>
+    </section>
+
+    <!-- ============ Session Summary ============ -->
+    <section id="summaryView" class="mt-4" hidden aria-labelledby="summaryTitle">
+      <p class="text-xs font-semibold uppercase tracking-wide text-brand-700">Session complete</p>
+      <h2 id="summaryTitle" class="mt-1 text-2xl font-semibold text-slate-900">Session Summary</h2>
+      <p id="summarySubtitle" class="mt-1 text-sm text-slate-500"></p>
+      <div id="summaryTopics" class="mt-5 space-y-3"></div>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <button id="practiceAgainBtn" type="button"
+          class="px-4 py-3 rounded-xl font-medium text-white bg-brand-700 hover:bg-brand-800 shadow-sm disabled:opacity-40">Practice Again (Next Set)</button>
+        <button id="backToTopicsBtn" type="button"
+          class="px-4 py-3 rounded-xl font-medium bg-white ring-1 ring-slate-300 hover:bg-slate-50">Back to Topics</button>
+      </div>
+      <div class="mt-4 text-center">
+        <button id="downloadCsvBtn" type="button" class="text-xs text-slate-400 hover:text-slate-600 underline underline-offset-2 disabled:opacity-40 disabled:no-underline">Download session analytics (.CSV)</button>
+      </div>
+    </section>
+
     <!-- ============ Progress ============ -->
-    <section class="mt-4" aria-label="Session progress">
+    <section id="progressSection" class="mt-4" aria-label="Session progress">
       <div class="flex items-center justify-between text-sm">
         <p class="font-medium text-slate-700"><span id="progressText">Loading exercises…</span></p>
         <span id="sectionBadge" class="text-xs font-semibold uppercase tracking-wide px-2 py-1 rounded-md bg-brand-100 text-brand-800"></span>
@@ -117,25 +193,21 @@
       </div>
     </section>
 
-    <!-- ============ Result ============ -->
+    <!-- ============ Result: qualitative coaching, no numbers ============ -->
     <section id="resultPanel" class="mt-5 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200 p-6 sm:p-8" hidden aria-live="polite">
-      <div class="flex items-center justify-between gap-4">
-        <div>
-          <div id="starRow" class="text-3xl tracking-wider" aria-hidden="true"></div>
-          <p id="starLabel" class="mt-1 font-semibold"></p>
+      <div class="flex flex-wrap items-start justify-between gap-3">
+        <div class="min-w-0">
+          <p id="statusBadge" class="inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-sm font-semibold"></p>
+          <p id="statusLine" class="mt-2 text-sm text-slate-600"></p>
         </div>
-        <div class="text-right">
-          <p class="text-4xl font-bold tabular-nums" id="overallScore">–</p>
-          <p class="text-xs uppercase tracking-wide text-slate-400">overall</p>
-          <p id="benchmarkBadge" class="mt-1 text-[11px] text-slate-500 whitespace-nowrap"></p>
-        </div>
+        <p id="benchmarkBadge" class="text-[11px] text-slate-500 whitespace-nowrap pt-2"></p>
       </div>
 
-      <!-- Why the rating was capped (target sound failed) -->
-      <p id="capReason" class="mt-2 text-sm text-rose-700" hidden></p>
+      <!-- The phrase, target words marked: green underline = clean, coral = needs work -->
+      <p id="feedbackPhrase" class="mt-5 font-display text-2xl sm:text-3xl leading-relaxed text-slate-900 break-words"></p>
 
-      <!-- Placement tip: one physical instruction for the sound to fix -->
-      <div id="coachTip" class="mt-3 flex items-start gap-2.5 rounded-xl bg-amber-50 ring-1 ring-amber-200 px-3.5 py-3 text-sm text-amber-950" hidden aria-live="polite">
+      <!-- One physical articulatory cue, directly under the phrase -->
+      <div id="coachTip" class="mt-4 flex items-start gap-2.5 rounded-xl bg-amber-50 ring-1 ring-amber-200 px-3.5 py-3 text-sm text-amber-950" hidden aria-live="polite">
         <svg class="w-4 h-4 mt-0.5 shrink-0 text-amber-500" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-4 12.7V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.3A7 7 0 0 0 12 2Zm-3 18h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-1Z"/></svg>
         <div class="min-w-0 flex-1">
           <div id="coachLoading" class="space-y-1.5 py-0.5" aria-label="Loading placement tip">
@@ -147,26 +219,36 @@
         </div>
       </div>
 
-      <div class="mt-6">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Word by word <span class="normal-case font-normal">— tap amber or red words for detail</span></p>
-        <div id="wordChips" class="flex flex-wrap gap-2"></div>
-        <div id="chipDetail" class="mt-3 rounded-xl bg-slate-50 ring-1 ring-slate-200 p-4 text-sm" hidden></div>
-      </div>
-
-      <div class="mt-5">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-400 mb-2">Target sounds <span id="targetLevelNote" class="normal-case font-normal"></span></p>
-        <div id="targetStrip" class="flex flex-wrap gap-1.5 text-sm"></div>
-      </div>
-
-      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-xs text-slate-500">
-        <div>
-          <div class="flex justify-between"><span>Fluency</span><span id="fluencyVal" class="tabular-nums">–</span></div>
-          <div class="mt-1 h-1 rounded-full bg-slate-100 overflow-hidden"><div id="fluencyBar" class="h-full bg-slate-400 rounded-full transition-all duration-700" style="width:0%"></div></div>
+      <!-- Hear & Compare: model vs learner energy envelopes + per-word playback -->
+      <div id="comparePanel" class="mt-6 border-t border-slate-100 pt-5">
+        <div class="flex items-center justify-between gap-3">
+          <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">Hear &amp; Compare</p>
+          <p class="flex items-center gap-1.5 text-[11px] text-slate-400"><span class="inline-block w-3 h-2 rounded-sm" style="background:rgba(244,63,94,.28)"></span>word to work on</p>
         </div>
-        <div>
-          <div class="flex justify-between"><span>Prosody</span><span id="prosodyVal" class="tabular-nums">–</span></div>
-          <div class="mt-1 h-1 rounded-full bg-slate-100 overflow-hidden"><div id="prosodyBar" class="h-full bg-slate-400 rounded-full transition-all duration-700" style="width:0%"></div></div>
+        <div class="mt-3 space-y-3">
+          <div class="flex items-center gap-3">
+            <button id="playModelBtn" type="button" aria-label="Play the model voice"
+              class="w-9 h-9 shrink-0 rounded-full grid place-items-center bg-brand-700 text-white hover:bg-brand-800 disabled:opacity-40">
+              <svg class="w-3.5 h-3.5 ml-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+            </button>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs text-slate-500 mb-1">Model voice <span id="modelVoiceName" class="text-slate-400"></span></p>
+              <canvas id="modelWave" class="block w-full h-12" aria-hidden="true"></canvas>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <button id="playLearnerBtn" type="button" aria-label="Play your recording"
+              class="w-9 h-9 shrink-0 rounded-full grid place-items-center bg-slate-700 text-white hover:bg-slate-800 disabled:opacity-40">
+              <svg class="w-3.5 h-3.5 ml-0.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4v16l13-8z"/></svg>
+            </button>
+            <div class="flex-1 min-w-0">
+              <p class="text-xs text-slate-500 mb-1">Your attempt</p>
+              <canvas id="learnerWave" class="block w-full h-12" aria-hidden="true"></canvas>
+            </div>
+          </div>
         </div>
+        <p id="compareNote" class="mt-2 text-[11px] text-slate-400" hidden></p>
+        <div id="diffWords" class="mt-4 space-y-2"></div>
       </div>
     </section>
 
@@ -177,7 +259,7 @@
       <button id="nextBtn" type="button"
         class="flex-1 px-4 py-3 rounded-xl font-medium text-white bg-brand-700 hover:bg-brand-800 shadow-sm">Next Phrase →</button>
     </div>
-    <div class="mt-3 text-center">
+    <div id="skipWrap" class="mt-3 text-center">
       <button id="skipBtn" type="button" class="text-xs text-slate-400 hover:text-slate-600 underline underline-offset-2">Skip this one</button>
     </div>
   </main>
@@ -187,47 +269,10 @@
     <p>Your voice is streamed to Azure for scoring and is not stored by this app. Session data stays in this tab.</p>
   </footer>
 
-  <!-- ============ Session summary ============ -->
-  <dialog id="summaryDialog" class="m-auto rounded-2xl p-0 w-[min(92vw,34rem)] shadow-2xl" aria-labelledby="summaryTitle">
-    <div class="p-6 sm:p-8">
-      <h2 id="summaryTitle" class="text-xl font-semibold">Session summary</h2>
-      <p id="summarySubtitle" class="text-sm text-slate-500 mt-1"></p>
-
-      <div class="mt-6 grid grid-cols-3 gap-3 text-center">
-        <div class="rounded-xl bg-slate-50 p-3">
-          <p id="sumCompleted" class="text-2xl font-bold tabular-nums">0</p>
-          <p class="text-[11px] uppercase tracking-wide text-slate-500">phrases</p>
-        </div>
-        <div class="rounded-xl bg-slate-50 p-3">
-          <p id="sumAttempts" class="text-2xl font-bold tabular-nums">0</p>
-          <p class="text-[11px] uppercase tracking-wide text-slate-500">attempts</p>
-        </div>
-        <div class="rounded-xl bg-slate-50 p-3">
-          <p id="sumStars" class="text-2xl font-bold tabular-nums">–</p>
-          <p class="text-[11px] uppercase tracking-wide text-slate-500">avg stars</p>
-        </div>
-      </div>
-
-      <div class="mt-6">
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-400">Top trouble sounds</p>
-        <ul id="sumTrouble" class="mt-2 space-y-2 text-sm"></ul>
-      </div>
-
-      <div class="mt-8 flex flex-col gap-3">
-        <button id="downloadCsvBtn" type="button"
-          class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl font-medium text-white bg-brand-700 hover:bg-brand-800 disabled:opacity-40 disabled:cursor-not-allowed">
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
-          Download Session Analytics (.CSV)
-        </button>
-        <button id="closeSummaryBtn" type="button"
-          class="px-4 py-3 rounded-xl font-medium ring-1 ring-slate-300 hover:bg-slate-50">Keep practising</button>
-      </div>
-      <button id="restartBtn" type="button" class="mt-4 w-full text-xs text-slate-400 hover:text-slate-600 underline underline-offset-2">Start a new session</button>
-    </div>
-  </dialog>
 
   <script src="https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@1.52.0/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle-min.js" defer></script>
   <script src="/scoring.js" defer></script>
+  <script src="/curriculum.js" defer></script>
   <script src="/app.js" defer></script>
 </body>
 </html>

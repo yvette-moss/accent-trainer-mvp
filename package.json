@@ -8,10 +8,11 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "node scripts/build.js",
+    "build": "node scripts/csv-to-json.js && node scripts/build.js",
+    "content": "node scripts/csv-to-json.js",
     "dev": "node scripts/dev-server.js",
     "eval": "node evals/run-evals.js",
     "eval:live": "node evals/run-evals.js --live",
-    "test": "node --test tests/api.test.js && node evals/run-evals.js"
+    "test": "node --test tests/api.test.js tests/diagnostic.test.js tests/feedback.test.js tests/curriculum.test.js && node evals/run-evals.js"
   }
 }

@@ -1,29 +1,292 @@
 {
-  "version": "2.1.0",
+  "version": "3.0.0",
   "locale": "en-US",
   "level": "B1",
-  "source": "Phrase-only curriculum: B1 /θ/ and /ð/ in everyday collocations, progressive sentences and minimal-pair contrast drills (/θ/–/s/, /ð/–/d/, /θ/–/t/, /w/–/v/). Builds on the B1 /θ/ and B2 /ð/ topics of English_Accent_Training_Actual_Program.md.",
+  "source": "Generated from content/curriculum.csv by scripts/csv-to-json.js — edit the CSV, not this file.",
+  "topics": [
+    {
+      "id": "th_unvoiced",
+      "title": "Unvoiced /θ/ Sound",
+      "sounds": [
+        "θ"
+      ],
+      "exercise_ids": [
+        "B1-S01",
+        "B1-S02",
+        "B1-S03",
+        "B1-S04",
+        "B1-P01",
+        "B1-P02",
+        "B1-P03",
+        "B1-P04",
+        "B1-C04",
+        "TH-U01",
+        "TH-U02",
+        "TH-U03",
+        "TH-U04",
+        "TH-U05"
+      ]
+    },
+    {
+      "id": "th_voiced",
+      "title": "Voiced /ð/ Sound",
+      "sounds": [
+        "ð"
+      ],
+      "exercise_ids": [
+        "B1-S05",
+        "B1-S06",
+        "B1-P05",
+        "B1-P06",
+        "B1-C03",
+        "TH-V01",
+        "TH-V02",
+        "TH-V03",
+        "TH-V04",
+        "TH-V05",
+        "TH-V06",
+        "TH-V07",
+        "TH-V08",
+        "TH-V09"
+      ]
+    },
+    {
+      "id": "th_vs_s",
+      "title": "/θ/ vs /s/ Contrast",
+      "sounds": [
+        "θ",
+        "s"
+      ],
+      "exercise_ids": [
+        "B1-C01",
+        "B1-C02",
+        "TS-01",
+        "TS-02",
+        "TS-03",
+        "TS-04",
+        "TS-05",
+        "TS-06",
+        "TS-07",
+        "TS-08",
+        "TS-09",
+        "TS-10",
+        "TS-11"
+      ]
+    },
+    {
+      "id": "w_vs_v",
+      "title": "W vs V Contrast",
+      "sounds": [
+        "w",
+        "v"
+      ],
+      "exercise_ids": [
+        "B1-C05",
+        "WV-01",
+        "WV-02",
+        "WV-03",
+        "WV-04",
+        "WV-05",
+        "WV-06",
+        "WV-07",
+        "WV-08",
+        "WV-09",
+        "WV-10",
+        "WV-11"
+      ]
+    },
+    {
+      "id": "s_vs_z",
+      "title": "/s/ vs /z/ & Final -s Endings",
+      "sounds": [
+        "s",
+        "z"
+      ],
+      "exercise_ids": [
+        "SZ-01",
+        "SZ-02",
+        "SZ-03",
+        "SZ-04",
+        "SZ-05",
+        "SZ-06",
+        "SZ-07",
+        "SZ-08",
+        "SZ-09",
+        "SZ-10",
+        "SZ-11",
+        "SZ-12"
+      ]
+    },
+    {
+      "id": "i_vs_ih",
+      "title": "/iː/ vs /ɪ/ Vowel Length",
+      "sounds": [
+        "i",
+        "ɪ"
+      ],
+      "exercise_ids": [
+        "IV-01",
+        "IV-02",
+        "IV-03",
+        "IV-04",
+        "IV-05",
+        "IV-06",
+        "IV-07",
+        "IV-08",
+        "IV-09",
+        "IV-10",
+        "IV-11",
+        "IV-12"
+      ]
+    },
+    {
+      "id": "postalveolar",
+      "title": "/ʃ/, /tʃ/ & /dʒ/ Sounds",
+      "sounds": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "exercise_ids": [
+        "PA-01",
+        "PA-02",
+        "PA-03",
+        "PA-04",
+        "PA-05",
+        "PA-06",
+        "PA-07",
+        "PA-08",
+        "PA-09",
+        "PA-10",
+        "PA-11",
+        "PA-12"
+      ]
+    },
+    {
+      "id": "r_vs_l",
+      "title": "/r/ vs /l/ Liquids",
+      "sounds": [
+        "ɹ",
+        "l"
+      ],
+      "exercise_ids": [
+        "RL-01",
+        "RL-02",
+        "RL-03",
+        "RL-04",
+        "RL-05",
+        "RL-06",
+        "RL-07",
+        "RL-08",
+        "RL-09",
+        "RL-10",
+        "RL-11",
+        "RL-12"
+      ]
+    },
+    {
+      "id": "stops",
+      "title": "Aspirated /p/ /t/ /k/ in Clusters",
+      "sounds": [
+        "p",
+        "t",
+        "k"
+      ],
+      "exercise_ids": [
+        "PK-01",
+        "PK-02",
+        "PK-03",
+        "PK-04",
+        "PK-05",
+        "PK-06",
+        "PK-07",
+        "PK-08",
+        "PK-09",
+        "PK-10",
+        "PK-11",
+        "PK-12"
+      ]
+    },
+    {
+      "id": "ae_vs_e",
+      "title": "/æ/ vs /ɛ/ (bad vs bed)",
+      "sounds": [
+        "æ",
+        "ɛ"
+      ],
+      "exercise_ids": [
+        "AE-01",
+        "AE-02",
+        "AE-03",
+        "AE-04",
+        "AE-05",
+        "AE-06",
+        "AE-07",
+        "AE-08",
+        "AE-09",
+        "AE-10",
+        "AE-11",
+        "AE-12"
+      ]
+    }
+  ],
   "sections": [
     {
-      "id": "collocation",
-      "label": "Everyday phrase",
-      "description": "Short collocations and work phrases (3–5 words) that put /θ/ or /ð/ in a natural chunk."
+      "id": "th_unvoiced",
+      "label": "Unvoiced /θ/ Sound",
+      "description": "Unvoiced /θ/ Sound"
     },
     {
-      "id": "sentence",
-      "label": "B1 sentence",
-      "description": "Progressive 6–10 word sentences with several /θ/ and /ð/ sounds in connected speech."
+      "id": "th_voiced",
+      "label": "Voiced /ð/ Sound",
+      "description": "Voiced /ð/ Sound"
     },
     {
-      "id": "contrast",
-      "label": "Contrast drill",
-      "description": "Minimal-pair sentences that force a clean switch between commonly confused sounds."
+      "id": "th_vs_s",
+      "label": "/θ/ vs /s/ Contrast",
+      "description": "/θ/ vs /s/ Contrast"
+    },
+    {
+      "id": "w_vs_v",
+      "label": "W vs V Contrast",
+      "description": "W vs V Contrast"
+    },
+    {
+      "id": "s_vs_z",
+      "label": "/s/ vs /z/ & Final -s Endings",
+      "description": "/s/ vs /z/ & Final -s Endings"
+    },
+    {
+      "id": "i_vs_ih",
+      "label": "/iː/ vs /ɪ/ Vowel Length",
+      "description": "/iː/ vs /ɪ/ Vowel Length"
+    },
+    {
+      "id": "postalveolar",
+      "label": "/ʃ/, /tʃ/ & /dʒ/ Sounds",
+      "description": "/ʃ/, /tʃ/ & /dʒ/ Sounds"
+    },
+    {
+      "id": "r_vs_l",
+      "label": "/r/ vs /l/ Liquids",
+      "description": "/r/ vs /l/ Liquids"
+    },
+    {
+      "id": "stops",
+      "label": "Aspirated /p/ /t/ /k/ in Clusters",
+      "description": "Aspirated /p/ /t/ /k/ in Clusters"
+    },
+    {
+      "id": "ae_vs_e",
+      "label": "/æ/ vs /ɛ/ (bad vs bed)",
+      "description": "/æ/ vs /ɛ/ (bad vs bed)"
     }
   ],
   "exercises": [
     {
       "id": "B1-S01",
-      "section": "collocation",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
       "target_text": "Think outside the box.",
       "focus": [
@@ -33,12 +296,12 @@
       "target_words": [
         "think"
       ],
-      "position": "initial",
       "cue": "'Think' is voiceless /θ/ — air only. 'the' is voiced /ð/ — same tongue, add a buzz."
     },
     {
       "id": "B1-S02",
-      "section": "collocation",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
       "target_text": "Through thick and thin.",
       "focus": [
@@ -49,12 +312,12 @@
         "thick",
         "thin"
       ],
-      "position": "initial",
       "cue": "Three /θ/ starts in a row: reset the tongue tip to your teeth before each one."
     },
     {
       "id": "B1-S03",
-      "section": "collocation",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
       "target_text": "Worth the extra effort.",
       "focus": [
@@ -65,12 +328,12 @@
       "target_words": [
         "worth"
       ],
-      "position": "mixed",
       "cue": "Round the lips for /w/, finish 'worth' with air at the teeth, then glide into a voiced 'the'."
     },
     {
       "id": "B1-S04",
-      "section": "collocation",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
       "target_text": "Healthy teeth and gums.",
       "focus": [
@@ -80,41 +343,12 @@
         "healthy",
         "teeth"
       ],
-      "position": "mixed",
       "cue": "Don't let the final /θ/ in 'teeth' turn into /t/ or /s/ before 'and'."
     },
     {
-      "id": "B1-S05",
-      "section": "collocation",
-      "type": "phrase",
-      "target_text": "Breathe in fresh air.",
-      "focus": [
-        "ð"
-      ],
-      "target_words": [
-        "breathe"
-      ],
-      "position": "final",
-      "cue": "'Breathe' ends in voiced /ð/ — feel the buzz on your tongue as you link into 'in'."
-    },
-    {
-      "id": "B1-S06",
-      "section": "collocation",
-      "type": "phrase",
-      "target_text": "Smooth as leather.",
-      "focus": [
-        "ð"
-      ],
-      "target_words": [
-        "smooth",
-        "leather"
-      ],
-      "position": "mixed",
-      "cue": "Two voiced /ð/ sounds: keep the tongue light at the teeth, never a hard /d/."
-    },
-    {
       "id": "B1-P01",
-      "section": "sentence",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
       "target_text": "I thought about thirty-three things this morning.",
       "focus": [
@@ -128,14 +362,14 @@
         "things",
         "this"
       ],
-      "position": "initial",
       "cue": "Four voiceless /θ/ starts, then a voiced /ð/ in 'this' — keep each one airy as you speed up."
     },
     {
       "id": "B1-P02",
-      "section": "sentence",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
-      "target_text": "The author shared his thoughtful perspective on the theme.",
+      "target_text": "The author chose a thoughtful theme.",
       "focus": [
         "θ",
         "ð"
@@ -145,12 +379,12 @@
         "thoughtful",
         "theme"
       ],
-      "position": "mixed",
       "cue": "'The' is voiced /ð/, 'author', 'thoughtful' and 'theme' are voiceless /θ/ — same tongue, different buzz."
     },
     {
       "id": "B1-P03",
-      "section": "sentence",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
       "target_text": "Her healthy tooth was throbbing throughout the night.",
       "focus": [
@@ -162,14 +396,14 @@
         "throbbing",
         "throughout"
       ],
-      "position": "mixed",
       "cue": "Watch the final /θ/ in 'tooth' before the /w/ of 'was'."
     },
     {
       "id": "B1-P04",
-      "section": "sentence",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
       "type": "phrase",
-      "target_text": "We need a thorough method to measure team growth.",
+      "target_text": "We need a thorough method for growth.",
       "focus": [
         "θ",
         "w"
@@ -180,12 +414,139 @@
         "method",
         "growth"
       ],
-      "position": "mixed",
       "cue": "Keep the /θ/ in 'method' and the final /θ/ in 'growth' — they are easy to drop at speed."
     },
     {
+      "id": "B1-C04",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
+      "type": "contrast",
+      "target_text": "Three tall trees grew along the track.",
+      "focus": [
+        "θ",
+        "t"
+      ],
+      "target_words": [
+        "three",
+        "trees",
+        "tall",
+        "track"
+      ],
+      "cue": "three = friction you can stretch; tall, trees, track = a quick stop.",
+      "contrast": [
+        "three",
+        "trees"
+      ]
+    },
+    {
+      "id": "TH-U01",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
+      "type": "phrase",
+      "target_text": "Thanks for your help on Thursday.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "thanks",
+        "thursday"
+      ],
+      "cue": "Start 'thanks' and 'Thursday' with the tongue tip lightly between the teeth and a soft push of air — no /t/ tap."
+    },
+    {
+      "id": "TH-U02",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
+      "type": "phrase",
+      "target_text": "Happy birthday, have a wonderful month!",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "birthday",
+        "month"
+      ],
+      "cue": "The /θ/ sits in the middle of 'birthday' and at the end of 'month': keep the air flowing at the teeth."
+    },
+    {
+      "id": "TH-U03",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
+      "type": "phrase",
+      "target_text": "Both of us think it's worth it.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "both",
+        "think",
+        "worth"
+      ],
+      "cue": "Three voiceless /θ/ sounds: finish 'both' and 'worth' with air at the teeth, not a /t/ or /s/."
+    },
+    {
+      "id": "TH-U04",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
+      "type": "phrase",
+      "target_text": "Nothing is healthier than a good night's sleep.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "nothing",
+        "healthier"
+      ],
+      "cue": "Keep 'nothing' airy at the teeth, and don't swap the /θ/ in 'healthier' for an /f/."
+    },
+    {
+      "id": "TH-U05",
+      "topic_id": "th_unvoiced",
+      "section": "th_unvoiced",
+      "type": "phrase",
+      "target_text": "My math teacher is very thorough.",
+      "focus": [
+        "θ"
+      ],
+      "target_words": [
+        "math",
+        "thorough"
+      ],
+      "cue": "'Math' ends in /θ/, not /s/; 'thorough' starts with it — tongue out, gentle air."
+    },
+    {
+      "id": "B1-S05",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Breathe in fresh air.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "breathe"
+      ],
+      "cue": "'Breathe' ends in voiced /ð/ — feel the buzz on your tongue as you link into 'in'."
+    },
+    {
+      "id": "B1-S06",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Smooth as leather.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "smooth",
+        "leather"
+      ],
+      "cue": "Two voiced /ð/ sounds: keep the tongue light at the teeth, never a hard /d/."
+    },
+    {
       "id": "B1-P05",
-      "section": "sentence",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
       "type": "phrase",
       "target_text": "They walked together through the chilly autumn weather.",
       "focus": [
@@ -200,71 +561,32 @@
         "through",
         "weather"
       ],
-      "position": "mixed",
       "cue": "Voiced /ð/ in 'they', 'together', 'the', 'weather'; voiceless /θ/ only in 'through'."
     },
     {
       "id": "B1-P06",
-      "section": "sentence",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
       "type": "phrase",
-      "target_text": "Although it was difficult, they found a worthwhile pathway.",
+      "target_text": "It was worthwhile, although they were tired.",
       "focus": [
         "ð",
         "θ",
         "w"
       ],
       "target_words": [
-        "although",
         "was",
-        "they",
         "worthwhile",
-        "pathway"
+        "although",
+        "they",
+        "were"
       ],
-      "position": "medial",
-      "cue": "'Although', 'they' are voiced /ð/; 'worthwhile' and 'pathway' hide a voiceless /θ/ before a /w/."
-    },
-    {
-      "id": "B1-C01",
-      "section": "contrast",
-      "type": "contrast",
-      "target_text": "I think the kitchen sink is clean.",
-      "focus": [
-        "θ",
-        "s"
-      ],
-      "target_words": [
-        "think",
-        "sink"
-      ],
-      "cue": "think = tongue at the teeth; sink = tongue behind the teeth.",
-      "contrast": [
-        "think",
-        "sink"
-      ]
-    },
-    {
-      "id": "B1-C02",
-      "section": "contrast",
-      "type": "contrast",
-      "target_text": "Take a deep breath and pass the test.",
-      "focus": [
-        "θ",
-        "s"
-      ],
-      "target_words": [
-        "breath",
-        "pass",
-        "test"
-      ],
-      "cue": "breath ends with air between the teeth; pass and test end with a sharp hiss behind them.",
-      "contrast": [
-        "breath",
-        "pass"
-      ]
+      "cue": "'Although' and 'they' are voiced /ð/; 'worthwhile' hides a voiceless /θ/ right before a /w/."
     },
     {
       "id": "B1-C03",
-      "section": "contrast",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
       "type": "contrast",
       "target_text": "They dare to go there together.",
       "focus": [
@@ -284,29 +606,418 @@
       ]
     },
     {
-      "id": "B1-C04",
-      "section": "contrast",
+      "id": "TH-V01",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Let's get together this weekend.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "together",
+        "this"
+      ],
+      "cue": "Voiced /ð/ in 'together' and 'this': tongue tip at the teeth, voice on, feel the buzz."
+    },
+    {
+      "id": "TH-V02",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "The weather is lovely today.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "weather"
+      ],
+      "cue": "Keep the /ð/ in the middle of 'weather' soft and buzzing — not a hard /d/."
+    },
+    {
+      "id": "TH-V03",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "My mother and father live there.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "mother",
+        "father",
+        "there"
+      ],
+      "cue": "Three voiced /ð/ sounds: let the tongue rest lightly on the teeth and keep your voice going."
+    },
+    {
+      "id": "TH-V04",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "I'd rather stay with my brother.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "rather",
+        "brother"
+      ],
+      "cue": "In 'rather' and 'brother' the /ð/ links two vowels — keep it smooth, never a /d/ or /z/."
+    },
+    {
+      "id": "TH-V05",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Those clothes are smoother than these.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "those",
+        "clothes",
+        "smoother",
+        "than",
+        "these"
+      ],
+      "cue": "Lots of voiced /ð/: keep the buzz at your teeth and don't let it slide into /z/."
+    },
+    {
+      "id": "TH-V06",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Breathe slowly and soothe your mind.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "breathe",
+        "soothe"
+      ],
+      "cue": "'Breathe' and 'soothe' end in a long voiced /ð/ — hold the buzz before the next word."
+    },
+    {
+      "id": "TH-V07",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Is it this one or that one?",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "this",
+        "that"
+      ],
+      "cue": "Start 'this' and 'that' with a light voiced buzz at the teeth, not a /d/."
+    },
+    {
+      "id": "TH-V08",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "Either way, they will be there.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "either",
+        "they",
+        "there"
+      ],
+      "cue": "'Either', 'they' and 'there': tongue tip touches the teeth, voice on, then glide away."
+    },
+    {
+      "id": "TH-V09",
+      "topic_id": "th_voiced",
+      "section": "th_voiced",
+      "type": "phrase",
+      "target_text": "We did it without them.",
+      "focus": [
+        "ð"
+      ],
+      "target_words": [
+        "without",
+        "them"
+      ],
+      "cue": "'Without' and 'them' use a soft voiced /ð/; compare it with the hard /d/ of 'did'."
+    },
+    {
+      "id": "B1-C01",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
       "type": "contrast",
-      "target_text": "Three tall trees grew along the track.",
+      "target_text": "I think the kitchen sink is clean.",
       "focus": [
         "θ",
-        "t"
+        "s"
+      ],
+      "target_words": [
+        "think",
+        "sink"
+      ],
+      "cue": "think = tongue at the teeth; sink = tongue behind the teeth.",
+      "contrast": [
+        "think",
+        "sink"
+      ]
+    },
+    {
+      "id": "B1-C02",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Take a deep breath and pass the test.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "breath",
+        "pass",
+        "test"
+      ],
+      "cue": "breath ends with air between the teeth; pass and test end with a sharp hiss behind them.",
+      "contrast": [
+        "breath",
+        "pass"
+      ]
+    },
+    {
+      "id": "TS-01",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "The thick soup made me sick.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "thick",
+        "sick",
+        "soup"
+      ],
+      "cue": "thick = tongue between the teeth; sick and soup = tongue behind them with a sharp hiss.",
+      "contrast": [
+        "thick",
+        "sick"
+      ]
+    },
+    {
+      "id": "TS-02",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Think of a song to sing.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "think",
+        "sing",
+        "song"
+      ],
+      "cue": "think = air through the teeth; song and sing = a hiss from behind them.",
+      "contrast": [
+        "think",
+        "sing"
+      ]
+    },
+    {
+      "id": "TS-03",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Walk the path and pass the gate.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "path",
+        "pass"
+      ],
+      "cue": "path ends with soft air at the teeth; pass ends with a hiss behind them.",
+      "contrast": [
+        "path",
+        "pass"
+      ]
+    },
+    {
+      "id": "TS-04",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Her faith shows on her face.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "faith",
+        "face"
+      ],
+      "cue": "faith ends at the teeth; face ends with an /s/ hiss behind them.",
+      "contrast": [
+        "faith",
+        "face"
+      ]
+    },
+    {
+      "id": "TS-05",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Three seats are still free.",
+      "focus": [
+        "θ",
+        "s"
       ],
       "target_words": [
         "three",
-        "tall",
-        "trees",
-        "track"
+        "seats",
+        "still"
       ],
-      "cue": "three = friction you can stretch; tall, trees, track = a quick stop.",
+      "cue": "three = tongue out, soft air; seats and still = tongue back, sharp hiss.",
       "contrast": [
         "three",
-        "trees"
+        "seats"
+      ]
+    },
+    {
+      "id": "TS-06",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Math class starts at seven.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "math",
+        "class",
+        "starts",
+        "seven"
+      ],
+      "cue": "math = soft friction at the teeth; class, starts and seven = tongue behind the teeth.",
+      "contrast": [
+        "math",
+        "class"
+      ]
+    },
+    {
+      "id": "TS-07",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Thank you, Sam, for the seat.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "thank",
+        "sam",
+        "seat"
+      ],
+      "cue": "thank = tongue between the teeth; Sam and seat = tongue tucked behind them.",
+      "contrast": [
+        "thank",
+        "sam"
+      ]
+    },
+    {
+      "id": "TS-08",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Both sides agree on this.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "both",
+        "sides"
+      ],
+      "cue": "both ends with air at the teeth; sides starts with a hiss behind them.",
+      "contrast": [
+        "both",
+        "sides"
+      ]
+    },
+    {
+      "id": "TS-09",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "My tooth hurts when I sip tea.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "tooth",
+        "sip",
+        "hurts"
+      ],
+      "cue": "tooth = air between the teeth; sip and hurts = a sharp /s/ behind them.",
+      "contrast": [
+        "tooth",
+        "sip"
+      ]
+    },
+    {
+      "id": "TS-10",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Is it thin or simply small?",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "thin",
+        "simply",
+        "small"
+      ],
+      "cue": "thin = tongue out and soft; simply and small = tongue in and hissing.",
+      "contrast": [
+        "thin",
+        "simply"
+      ]
+    },
+    {
+      "id": "TS-11",
+      "topic_id": "th_vs_s",
+      "section": "th_vs_s",
+      "type": "contrast",
+      "target_text": "Thursday is the first sunny day.",
+      "focus": [
+        "θ",
+        "s"
+      ],
+      "target_words": [
+        "thursday",
+        "sunny",
+        "first"
+      ],
+      "cue": "Thursday = tongue at the teeth; sunny and first = a clean /s/ hiss.",
+      "contrast": [
+        "thursday",
+        "sunny"
       ]
     },
     {
       "id": "B1-C05",
-      "section": "contrast",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
       "type": "contrast",
       "target_text": "We went to view the very wide valley.",
       "focus": [
@@ -314,11 +1025,11 @@
         "v"
       ],
       "target_words": [
+        "wide",
+        "view",
         "we",
         "went",
-        "view",
         "very",
-        "wide",
         "valley"
       ],
       "cue": "/w/ = rounded lips, no teeth. /v/ = top teeth touch the lower lip.",
@@ -326,6 +1037,2194 @@
         "wide",
         "view"
       ]
+    },
+    {
+      "id": "WV-01",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "The wide valley has a lovely view.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "wide",
+        "valley",
+        "view"
+      ],
+      "cue": "wide = rounded lips, no teeth; valley and view = top teeth on the lower lip.",
+      "contrast": [
+        "wide",
+        "valley"
+      ]
+    },
+    {
+      "id": "WV-02",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "It's very warm this evening.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "warm",
+        "very",
+        "evening"
+      ],
+      "cue": "warm = lips rounded like 'oo'; very and evening = teeth touch the lip and buzz.",
+      "contrast": [
+        "warm",
+        "very"
+      ]
+    },
+    {
+      "id": "WV-03",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "We visited a village by the river.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "we",
+        "visited",
+        "village",
+        "river"
+      ],
+      "cue": "we = rounded lips; visited, village and river = teeth on the lower lip.",
+      "contrast": [
+        "we",
+        "visited"
+      ]
+    },
+    {
+      "id": "WV-04",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "The wind moved the vines.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "wind",
+        "vines",
+        "moved"
+      ],
+      "cue": "wind = round your lips; vines and moved = teeth gently on the lower lip.",
+      "contrast": [
+        "wind",
+        "vines"
+      ]
+    },
+    {
+      "id": "WV-05",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "Would you like a vanilla waffle?",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "would",
+        "vanilla",
+        "waffle"
+      ],
+      "cue": "would and waffle = rounded lips; vanilla = teeth on the lip with a buzz.",
+      "contrast": [
+        "would",
+        "vanilla"
+      ]
+    },
+    {
+      "id": "WV-06",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "Her voice was warm and lovely.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "warm",
+        "voice",
+        "was",
+        "lovely"
+      ],
+      "cue": "warm and was = rounded lips; voice and lovely = teeth on the lower lip.",
+      "contrast": [
+        "warm",
+        "voice"
+      ]
+    },
+    {
+      "id": "WV-07",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "We have five weeks of vacation.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "we",
+        "five",
+        "weeks",
+        "vacation",
+        "have"
+      ],
+      "cue": "we and weeks = rounded lips; five, have and vacation = teeth touch the lip.",
+      "contrast": [
+        "we",
+        "five"
+      ]
+    },
+    {
+      "id": "WV-08",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "Wear a vest when it's windy.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "wear",
+        "vest",
+        "when",
+        "windy"
+      ],
+      "cue": "wear, when and windy = lips round, teeth away; vest = teeth on the lip.",
+      "contrast": [
+        "wear",
+        "vest"
+      ]
+    },
+    {
+      "id": "WV-09",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "Every Wednesday we watch a movie.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "wednesday",
+        "every",
+        "we",
+        "watch",
+        "movie"
+      ],
+      "cue": "Wednesday, we and watch = rounded lips; every and movie = teeth on the lower lip.",
+      "contrast": [
+        "wednesday",
+        "every"
+      ]
+    },
+    {
+      "id": "WV-10",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "I'll wait for the next van.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "wait",
+        "van"
+      ],
+      "cue": "wait = start with rounded lips; van = start with teeth on the lower lip.",
+      "contrast": [
+        "wait",
+        "van"
+      ]
+    },
+    {
+      "id": "WV-11",
+      "topic_id": "w_vs_v",
+      "section": "w_vs_v",
+      "type": "contrast",
+      "target_text": "We value what we have.",
+      "focus": [
+        "w",
+        "v"
+      ],
+      "target_words": [
+        "we",
+        "value",
+        "what",
+        "have"
+      ],
+      "cue": "we and what = rounded lips; value and have = teeth on the lip, voice on.",
+      "contrast": [
+        "we",
+        "value"
+      ]
+    },
+    {
+      "id": "SZ-01",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "Her business is doing really well.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "business",
+        "is"
+      ],
+      "cue": "In 'business' the first s is a buzzing /z/ and the last a hissing /s/ — feel the switch in your throat.",
+      "contrast": [
+        "business",
+        "is"
+      ]
+    },
+    {
+      "id": "SZ-02",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "The old houses rise above the streets.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "houses",
+        "streets",
+        "rise"
+      ],
+      "cue": "'Houses' and 'rise' buzz with /z/; 'streets' hisses with /s/ — hand on your throat to feel it.",
+      "contrast": [
+        "houses",
+        "streets"
+      ]
+    },
+    {
+      "id": "SZ-03",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "A cool breeze rises from the sea.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "breeze",
+        "sea",
+        "rises"
+      ],
+      "cue": "Hold the buzz to the very end of 'breeze' and 'rises'; 'sea' is pure air.",
+      "contrast": [
+        "breeze",
+        "sea"
+      ]
+    },
+    {
+      "id": "SZ-04",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "She always says yes to new ideas.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "says",
+        "yes",
+        "ideas",
+        "always"
+      ],
+      "cue": "'Says' starts with /s/ and ends with /z/; 'yes' ends with a clean /s/ hiss.",
+      "contrast": [
+        "says",
+        "yes"
+      ]
+    },
+    {
+      "id": "SZ-05",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "Prices rise as the season changes.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "prices",
+        "season",
+        "rise",
+        "changes"
+      ],
+      "cue": "Keep the voice on for the endings of 'prices' and 'changes' — /ɪz/, not /ɪs/.",
+      "contrast": [
+        "prices",
+        "season"
+      ]
+    },
+    {
+      "id": "SZ-06",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "He loses his keys twice a week.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "loses",
+        "twice",
+        "keys",
+        "his"
+      ],
+      "cue": "'Loses', 'his' and 'keys' end in voiced /z/; 'twice' ends with a sharp /s/.",
+      "contrast": [
+        "loses",
+        "twice"
+      ]
+    },
+    {
+      "id": "SZ-07",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "These sauces taste amazing.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "sauces",
+        "taste",
+        "amazing",
+        "these"
+      ],
+      "cue": "'Sauces' starts with /s/ and ends with /ɪz/; keep 'amazing' buzzy in the middle.",
+      "contrast": [
+        "sauces",
+        "taste"
+      ]
+    },
+    {
+      "id": "SZ-08",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "The bus was full of tourists.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "was",
+        "bus",
+        "tourists"
+      ],
+      "cue": "'Bus' ends with a hiss; 'was' ends with a buzz — don't devoice it to 'wass'.",
+      "contrast": [
+        "was",
+        "bus"
+      ]
+    },
+    {
+      "id": "SZ-09",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "Close the door and choose a seat.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "close",
+        "seat",
+        "choose"
+      ],
+      "cue": "The verb 'close' and 'choose' end in buzzing /z/; 'seat' starts with a hiss.",
+      "contrast": [
+        "close",
+        "seat"
+      ]
+    },
+    {
+      "id": "SZ-10",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "My nieces visit us on Sundays.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "nieces",
+        "us",
+        "visit",
+        "sundays"
+      ],
+      "cue": "'Visit' and 'Sundays' carry a voiced /z/; 'us' ends with an unvoiced /s/.",
+      "contrast": [
+        "nieces",
+        "us"
+      ]
+    },
+    {
+      "id": "SZ-11",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "She sells roses at the market.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "roses",
+        "sells"
+      ],
+      "cue": "'Sells' starts with /s/ and ends with /z/; both s letters in 'roses' buzz.",
+      "contrast": [
+        "roses",
+        "sells"
+      ]
+    },
+    {
+      "id": "SZ-12",
+      "topic_id": "s_vs_z",
+      "section": "s_vs_z",
+      "type": "contrast",
+      "target_text": "Use this rice for the dishes.",
+      "focus": [
+        "s",
+        "z"
+      ],
+      "target_words": [
+        "use",
+        "rice",
+        "dishes"
+      ],
+      "cue": "The verb 'use' ends with a buzz, 'rice' with a hiss, and 'dishes' with /ɪz/.",
+      "contrast": [
+        "use",
+        "rice"
+      ]
+    },
+    {
+      "id": "IV-01",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "I feel you should fill the form.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "feel",
+        "fill"
+      ],
+      "cue": "'Feel' = long, smiling /iː/; 'fill' = short, relaxed /ɪ/ with a looser jaw.",
+      "contrast": [
+        "feel",
+        "fill"
+      ]
+    },
+    {
+      "id": "IV-02",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Please leave if you live nearby.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "leave",
+        "live",
+        "please"
+      ],
+      "cue": "Stretch 'leave' and 'please'; keep 'live' short and lax.",
+      "contrast": [
+        "leave",
+        "live"
+      ]
+    },
+    {
+      "id": "IV-03",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Each scene in this film works.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "scene",
+        "film",
+        "each",
+        "this"
+      ],
+      "cue": "Long tense /iː/ in 'each' and 'scene'; short lax /ɪ/ in 'this' and 'film'.",
+      "contrast": [
+        "scene",
+        "film"
+      ]
+    },
+    {
+      "id": "IV-04",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "We need to sleep a little.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "sleep",
+        "little",
+        "need"
+      ],
+      "cue": "Hold 'need' and 'sleep' longer with spread lips; 'little' is quick and relaxed.",
+      "contrast": [
+        "sleep",
+        "little"
+      ]
+    },
+    {
+      "id": "IV-05",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Keep the ship clean and quick.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "keep",
+        "ship",
+        "clean",
+        "quick"
+      ],
+      "cue": "'Keep' and 'clean' are long and tense; 'ship' and 'quick' are short — not 'sheep'.",
+      "contrast": [
+        "keep",
+        "ship"
+      ]
+    },
+    {
+      "id": "IV-06",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Please sit in your seat.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "seat",
+        "sit",
+        "please"
+      ],
+      "cue": "'Seat' is long with smiling lips; 'sit' is short with a relaxed tongue.",
+      "contrast": [
+        "seat",
+        "sit"
+      ]
+    },
+    {
+      "id": "IV-07",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "The team will win this week.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "team",
+        "win",
+        "week",
+        "will"
+      ],
+      "cue": "Long /iː/ in 'team' and 'week'; short /ɪ/ in 'will' and 'win'.",
+      "contrast": [
+        "team",
+        "win"
+      ]
+    },
+    {
+      "id": "IV-08",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Eat a bit of cheese.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "eat",
+        "bit",
+        "cheese"
+      ],
+      "cue": "Stretch 'eat' and 'cheese'; cut 'bit' short so it doesn't become 'beat'.",
+      "contrast": [
+        "eat",
+        "bit"
+      ]
+    },
+    {
+      "id": "IV-09",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "She bought cheap chips today.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "cheap",
+        "chips"
+      ],
+      "cue": "'Cheap' = long /iː/; 'chips' = short /ɪ/ — the vowel length carries the meaning.",
+      "contrast": [
+        "cheap",
+        "chips"
+      ]
+    },
+    {
+      "id": "IV-10",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Read the list and keep it.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "read",
+        "list",
+        "keep",
+        "it"
+      ],
+      "cue": "Long in 'read' and 'keep'; short and relaxed in 'list' and 'it'.",
+      "contrast": [
+        "read",
+        "list"
+      ]
+    },
+    {
+      "id": "IV-11",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "Meet me at six, please.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "meet",
+        "six",
+        "please"
+      ],
+      "cue": "Smile and hold 'meet' and 'please'; 'six' is short with a looser jaw.",
+      "contrast": [
+        "meet",
+        "six"
+      ]
+    },
+    {
+      "id": "IV-12",
+      "topic_id": "i_vs_ih",
+      "section": "i_vs_ih",
+      "type": "contrast",
+      "target_text": "The heat makes it hard to think.",
+      "focus": [
+        "i",
+        "ɪ"
+      ],
+      "target_words": [
+        "heat",
+        "it",
+        "think"
+      ],
+      "cue": "'Heat' is long and tense; 'it' and 'think' use the short lax /ɪ/.",
+      "contrast": [
+        "heat",
+        "it"
+      ]
+    },
+    {
+      "id": "PA-01",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Let's change the project action plan.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "change",
+        "project",
+        "action"
+      ],
+      "cue": "Round your lips slightly for /tʃ/, /dʒ/ and /ʃ/; 'change' starts with /tʃ/ and ends with /dʒ/."
+    },
+    {
+      "id": "PA-02",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Check the bridge before the big shift.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "check",
+        "bridge",
+        "shift"
+      ],
+      "cue": "'Check' = stop + hiss /tʃ/; 'bridge' ends in voiced /dʒ/; 'shift' = smooth /ʃ/ with no stop."
+    },
+    {
+      "id": "PA-03",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Each manager shares a short report.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "each",
+        "manager",
+        "shares",
+        "short"
+      ],
+      "cue": "Lips pushed forward: /tʃ/ in 'each', /dʒ/ in 'manager', /ʃ/ in 'shares' and 'short'."
+    },
+    {
+      "id": "PA-04",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Join the chat and share your ideas.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "join",
+        "chat",
+        "share"
+      ],
+      "cue": "'Join' = voiced /dʒ/, 'chat' = unvoiced /tʃ/, 'share' = /ʃ/ with no stop at the start."
+    },
+    {
+      "id": "PA-05",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "She just changed the schedule.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "she",
+        "just",
+        "changed",
+        "schedule"
+      ],
+      "cue": "Keep /ʃ/ in 'she' soft and rounded; 'just' and 'schedule' carry a voiced /dʒ/."
+    },
+    {
+      "id": "PA-06",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Choose a large dish for lunch.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "choose",
+        "large",
+        "dish",
+        "lunch"
+      ],
+      "cue": "'Choose' and 'lunch' have /tʃ/; 'large' ends with /dʒ/; 'dish' ends with a long /ʃ/."
+    },
+    {
+      "id": "PA-07",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "The coach shared a generous suggestion.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "coach",
+        "shared",
+        "generous",
+        "suggestion"
+      ],
+      "cue": "'Coach' ends with /tʃ/, 'shared' starts with /ʃ/, 'generous' starts with voiced /dʒ/."
+    },
+    {
+      "id": "PA-08",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Watch the jet engine in action.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "watch",
+        "jet",
+        "engine",
+        "action"
+      ],
+      "cue": "'Watch' ends in /tʃ/, 'jet' and 'engine' use /dʒ/, and 'action' hides a /ʃ/."
+    },
+    {
+      "id": "PA-09",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "This situation needs a major change.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "situation",
+        "major",
+        "change"
+      ],
+      "cue": "'Situation' has /tʃ/ then /ʃ/; 'major' has /dʒ/ — keep the lips slightly rounded."
+    },
+    {
+      "id": "PA-10",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Teachers judge each special project fairly.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "teachers",
+        "judge",
+        "each",
+        "special",
+        "project"
+      ],
+      "cue": "/tʃ/ in 'teachers' and 'each', /dʒ/ in 'judge' and 'project', /ʃ/ in 'special'."
+    },
+    {
+      "id": "PA-11",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "I enjoy fresh cheese and juice.",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "enjoy",
+        "fresh",
+        "cheese",
+        "juice"
+      ],
+      "cue": "'Enjoy' and 'juice' start with voiced /dʒ/; 'cheese' with /tʃ/; 'fresh' ends in /ʃ/."
+    },
+    {
+      "id": "PA-12",
+      "topic_id": "postalveolar",
+      "section": "postalveolar",
+      "type": "phrase",
+      "target_text": "Should we charge the budget now?",
+      "focus": [
+        "ʃ",
+        "tʃ",
+        "dʒ"
+      ],
+      "target_words": [
+        "should",
+        "charge",
+        "budget"
+      ],
+      "cue": "'Should' = soft /ʃ/; 'charge' = /tʃ/ … /dʒ/; 'budget' = voiced /dʒ/ in the middle."
+    },
+    {
+      "id": "RL-01",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "The results are really clear.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "results",
+        "clear",
+        "really"
+      ],
+      "cue": "For /r/ pull the tongue back without touching anything; for /l/ press the tip behind the top teeth.",
+      "contrast": [
+        "results",
+        "clear"
+      ]
+    },
+    {
+      "id": "RL-02",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "The world is a large place.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "large",
+        "world",
+        "place"
+      ],
+      "cue": "No rolled r in 'large': pull the tongue back; let the /l/ in 'world' and 'place' touch the ridge.",
+      "contrast": [
+        "large",
+        "world"
+      ]
+    },
+    {
+      "id": "RL-03",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Please read the list aloud.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "read",
+        "list",
+        "please",
+        "aloud"
+      ],
+      "cue": "'Read' = lips slightly round, tongue touching nothing; 'list' = tongue tip touching the ridge.",
+      "contrast": [
+        "read",
+        "list"
+      ]
+    },
+    {
+      "id": "RL-04",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Light rain fell all morning.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "rain",
+        "light",
+        "fell",
+        "morning"
+      ],
+      "cue": "'Rain' = tongue pulled back, lips slightly round; 'light' and 'fell' = tongue tip on the ridge.",
+      "contrast": [
+        "rain",
+        "light"
+      ]
+    },
+    {
+      "id": "RL-05",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "The long road leads to Rome.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "road",
+        "long",
+        "leads",
+        "rome"
+      ],
+      "cue": "'Road' and 'Rome' = no tap, no trill; 'long' and 'leads' = tip touching behind the teeth.",
+      "contrast": [
+        "road",
+        "long"
+      ]
+    },
+    {
+      "id": "RL-06",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Correct the wrong lines, please.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "wrong",
+        "lines",
+        "correct",
+        "please"
+      ],
+      "cue": "'Wrong' starts with a smooth English /r/ — never a trill; 'lines' starts with a clear /l/.",
+      "contrast": [
+        "wrong",
+        "lines"
+      ]
+    },
+    {
+      "id": "RL-07",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "I really like your new glasses.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "really",
+        "like",
+        "glasses"
+      ],
+      "cue": "'Really' has /r/ then /l/: tongue back and free, then tip up to the ridge.",
+      "contrast": [
+        "really",
+        "like"
+      ]
+    },
+    {
+      "id": "RL-08",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Fresh fruit grows in the valley.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "fresh",
+        "valley",
+        "fruit",
+        "grows"
+      ],
+      "cue": "Keep the /r/ in 'fresh', 'fruit' and 'grows' soft and untrilled; touch the ridge for 'valley'.",
+      "contrast": [
+        "fresh",
+        "valley"
+      ]
+    },
+    {
+      "id": "RL-09",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Clear rules help everyone learn.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "rules",
+        "clear",
+        "help",
+        "learn"
+      ],
+      "cue": "'Rules' starts with /r/ and ends with /l/ — tongue from back and free to tip-up.",
+      "contrast": [
+        "rules",
+        "clear"
+      ]
+    },
+    {
+      "id": "RL-10",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "The library is closed on Fridays.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "fridays",
+        "library",
+        "closed"
+      ],
+      "cue": "'Library' alternates /l/ and /r/ — tip up for l, tongue back for r, no trills.",
+      "contrast": [
+        "fridays",
+        "library"
+      ]
+    },
+    {
+      "id": "RL-11",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Turn right at the traffic light.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "right",
+        "light",
+        "traffic"
+      ],
+      "cue": "'Right' vs 'light': only the tongue tip changes — free for /r/, touching for /l/.",
+      "contrast": [
+        "right",
+        "light"
+      ]
+    },
+    {
+      "id": "RL-12",
+      "topic_id": "r_vs_l",
+      "section": "r_vs_l",
+      "type": "contrast",
+      "target_text": "Our free plan is really flexible.",
+      "focus": [
+        "ɹ",
+        "l"
+      ],
+      "target_words": [
+        "free",
+        "plan",
+        "really",
+        "flexible"
+      ],
+      "cue": "In 'free' the /r/ follows /f/ smoothly; in 'plan' and 'flexible' the /l/ follows /p/ and /f/.",
+      "contrast": [
+        "free",
+        "plan"
+      ]
+    },
+    {
+      "id": "PK-01",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "We planned two projects this quarter.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "planned",
+        "projects",
+        "two",
+        "quarter"
+      ],
+      "cue": "Release a small puff of air after /p/, /t/ and /k/ at the start of a stressed syllable."
+    },
+    {
+      "id": "PK-02",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Keep track of the sprint plan.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "keep",
+        "track",
+        "sprint",
+        "plan"
+      ],
+      "cue": "Puff of air on 'keep', 'track' and 'plan'; after /s/ in 'sprint' the /p/ has no puff."
+    },
+    {
+      "id": "PK-03",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Please take a quick break.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "please",
+        "take",
+        "quick",
+        "break"
+      ],
+      "cue": "Hold a tissue in front of your mouth: it should move on 'please', 'take' and 'quick'."
+    },
+    {
+      "id": "PK-04",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "The team completed the task on time.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "team",
+        "completed",
+        "task",
+        "time"
+      ],
+      "cue": "Aspirate the /t/ in 'team' and 'time' and the /k/ in 'completed' — a short burst of air."
+    },
+    {
+      "id": "PK-05",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Put the cups on the top shelf.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "put",
+        "cups",
+        "top"
+      ],
+      "cue": "Strong puff on 'put', 'cups' and 'top'; don't let them sound like 'b', 'g' or 'd'."
+    },
+    {
+      "id": "PK-06",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Click the play button twice.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "click",
+        "play",
+        "button",
+        "twice"
+      ],
+      "cue": "'Click', 'play' and 'twice' start with aspirated stops — air first, then the vowel."
+    },
+    {
+      "id": "PK-07",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Coffee prices went up today.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "coffee",
+        "prices",
+        "today"
+      ],
+      "cue": "Breathy release on /k/ in 'coffee', /p/ in 'prices' and /t/ in 'today'."
+    },
+    {
+      "id": "PK-08",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Pick a topic for the talk.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "pick",
+        "topic",
+        "talk"
+      ],
+      "cue": "Three aspirated starts: 'pick', 'topic', 'talk' — feel the air on your hand."
+    },
+    {
+      "id": "PK-09",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Our client expects a clear plan.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "client",
+        "expects",
+        "clear",
+        "plan"
+      ],
+      "cue": "In /kl/ and /pl/ the puff makes the /l/ slightly breathy — don't add a vowel between."
+    },
+    {
+      "id": "PK-10",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Split the cake into ten pieces.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "split",
+        "cake",
+        "ten",
+        "pieces"
+      ],
+      "cue": "'Cake', 'ten' and 'pieces' get a puff; after /s/ in 'split' the /p/ is unaspirated."
+    },
+    {
+      "id": "PK-11",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "The train stops at Park Street.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "train",
+        "stops",
+        "park",
+        "street"
+      ],
+      "cue": "Aspirate 'train' and 'Park'; 'stops' and 'street' start with /s/, so no puff there."
+    },
+    {
+      "id": "PK-12",
+      "topic_id": "stops",
+      "section": "stops",
+      "type": "phrase",
+      "target_text": "Tell Kate the price is correct.",
+      "focus": [
+        "p",
+        "t",
+        "k"
+      ],
+      "target_words": [
+        "tell",
+        "kate",
+        "price",
+        "correct"
+      ],
+      "cue": "Puff of air on 'tell', 'Kate', 'price' and 'correct' — no voicing until the vowel."
+    },
+    {
+      "id": "AE-01",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "My bed is not that bad.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "bad",
+        "bed",
+        "that"
+      ],
+      "cue": "'Bad' = jaw drops low, mouth wide; 'bed' = jaw only half open.",
+      "contrast": [
+        "bad",
+        "bed"
+      ]
+    },
+    {
+      "id": "AE-02",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "Set the bag on that desk.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "bag",
+        "set",
+        "that",
+        "desk"
+      ],
+      "cue": "Open wide for 'bag' and 'that'; keep the jaw higher for 'set' and 'desk'.",
+      "contrast": [
+        "bag",
+        "set"
+      ]
+    },
+    {
+      "id": "AE-03",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "I had a headache yesterday.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "had",
+        "headache",
+        "yesterday"
+      ],
+      "cue": "'Had' = wide, low /æ/; 'head' and 'yes' = mid /ɛ/.",
+      "contrast": [
+        "had",
+        "headache"
+      ]
+    },
+    {
+      "id": "AE-04",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "Pack your pens and maps.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "pack",
+        "pens",
+        "maps"
+      ],
+      "cue": "'Pack' and 'maps' = drop the jaw; 'pens' = smaller mouth, tongue higher.",
+      "contrast": [
+        "pack",
+        "pens"
+      ]
+    },
+    {
+      "id": "AE-05",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "Send the plan to Anna.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "plan",
+        "send",
+        "anna"
+      ],
+      "cue": "'Plan' and 'Anna' open wide like a yawn; 'send' stays mid-open.",
+      "contrast": [
+        "plan",
+        "send"
+      ]
+    },
+    {
+      "id": "AE-06",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "My dad left a message.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "dad",
+        "left",
+        "message"
+      ],
+      "cue": "'Dad' = low and wide; 'left' and 'message' = mid /ɛ/ — don't make them the same.",
+      "contrast": [
+        "dad",
+        "left"
+      ]
+    },
+    {
+      "id": "AE-07",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "That pan is better than this pen.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "pan",
+        "pen",
+        "better",
+        "that"
+      ],
+      "cue": "'Pan' vs 'pen': drop the jaw for the first, lift it for the second.",
+      "contrast": [
+        "pan",
+        "pen"
+      ]
+    },
+    {
+      "id": "AE-08",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "Help me pack this bag.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "pack",
+        "help",
+        "bag"
+      ],
+      "cue": "'Help' is mid /ɛ/; 'pack' and 'bag' are low, wide /æ/.",
+      "contrast": [
+        "pack",
+        "help"
+      ]
+    },
+    {
+      "id": "AE-09",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "The cat sat next to Ben.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "cat",
+        "ben",
+        "sat",
+        "next"
+      ],
+      "cue": "'Cat' and 'sat' = jaw low; 'next' and 'Ben' = jaw mid.",
+      "contrast": [
+        "cat",
+        "ben"
+      ]
+    },
+    {
+      "id": "AE-10",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "Every family has a plan.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "family",
+        "every",
+        "has",
+        "plan"
+      ],
+      "cue": "'Every' starts with mid /ɛ/; 'family', 'has' and 'plan' open wide with /æ/.",
+      "contrast": [
+        "family",
+        "every"
+      ]
+    },
+    {
+      "id": "AE-11",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "Grab a snack before the test.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "grab",
+        "test",
+        "snack"
+      ],
+      "cue": "'Grab' and 'snack' = wide /æ/; 'test' = mid /ɛ/.",
+      "contrast": [
+        "grab",
+        "test"
+      ]
+    },
+    {
+      "id": "AE-12",
+      "topic_id": "ae_vs_e",
+      "section": "ae_vs_e",
+      "type": "contrast",
+      "target_text": "He sent the man a letter.",
+      "focus": [
+        "æ",
+        "ɛ"
+      ],
+      "target_words": [
+        "man",
+        "sent",
+        "letter"
+      ],
+      "cue": "'Man' = wide /æ/; 'sent' and 'letter' = mid /ɛ/ — 'man' and 'men' must differ.",
+      "contrast": [
+        "man",
+        "sent"
+      ]
+    }
+  ],
+  "diagnostics": [
+    {
+      "id": "diag_01",
+      "title": "Team Briefing",
+      "theme": "Workplace",
+      "target_text": "On Thursday morning, thirty-three team members met to review their quarterly growth. Although the schedule was tight, everyone stayed very focused and positive. We walked through the healthy changes planned for the upcoming sprint, breathing fresh energy into our daily workflow.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "θ",
+        "ð",
+        "w",
+        "v"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "θ": [
+          "thursday",
+          "thirty",
+          "three",
+          "growth",
+          "through",
+          "healthy"
+        ],
+        "ð": [
+          "their",
+          "although",
+          "the",
+          "breathing"
+        ],
+        "w": [
+          "was",
+          "everyone",
+          "we",
+          "walked",
+          "workflow",
+          "quarterly"
+        ],
+        "v": [
+          "review",
+          "everyone",
+          "very",
+          "positive"
+        ]
+      }
+    },
+    {
+      "id": "diag_02",
+      "title": "Winter Commute",
+      "theme": "Travel & Weather",
+      "target_text": "They drove west toward the valley while the cold autumn wind rattled the windows. Heavy clouds hovered over the village, but the driver remained very calm. Breathing the crisp evening air, both travelers felt relief as they approached their brother's warm cottage.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "w",
+        "v",
+        "ð"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "w": [
+          "west",
+          "while",
+          "wind",
+          "windows",
+          "warm"
+        ],
+        "v": [
+          "drove",
+          "valley",
+          "heavy",
+          "hovered",
+          "over",
+          "village",
+          "driver",
+          "very",
+          "evening",
+          "travelers"
+        ],
+        "ð": [
+          "they",
+          "the",
+          "breathing",
+          "their",
+          "brother's"
+        ]
+      }
+    },
+    {
+      "id": "diag_03",
+      "title": "Architecture Review",
+      "theme": "Design & Precision",
+      "target_text": "This project requires thorough thinking and clean execution from start to finish. Without proper research, a fragile structure will collapse under sudden pressure. We must measure the depth, calculate the true weight, and breathe stability into the overall plan.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "θ",
+        "ð",
+        "ɹ",
+        "p"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "θ": [
+          "thorough",
+          "thinking",
+          "depth"
+        ],
+        "ð": [
+          "this",
+          "without",
+          "the",
+          "breathe"
+        ],
+        "ɹ": [
+          "project",
+          "requires",
+          "from",
+          "proper",
+          "research",
+          "fragile",
+          "structure",
+          "pressure",
+          "true"
+        ],
+        "p": [
+          "project",
+          "proper",
+          "depth",
+          "collapse",
+          "pressure",
+          "plan"
+        ]
+      }
+    },
+    {
+      "id": "diag_04",
+      "title": "Coastal Market",
+      "theme": "Everyday Life",
+      "target_text": "Six busy fishermen leave the dock each morning to fill their green nets in the deep sea. As the sun rises, brisk breezes sweep across the beach. People visit the lively fish market to choose fresh meals, praising the quality and reasonable prices.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "i",
+        "ɪ",
+        "s",
+        "z"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "i": [
+          "leave",
+          "each",
+          "green",
+          "deep",
+          "sea",
+          "breezes",
+          "sweep",
+          "beach",
+          "people",
+          "meals",
+          "reasonable"
+        ],
+        "ɪ": [
+          "six",
+          "busy",
+          "fishermen",
+          "fill",
+          "in",
+          "brisk",
+          "visit",
+          "fish"
+        ],
+        "s": [
+          "six",
+          "sea",
+          "sun",
+          "brisk",
+          "sweep",
+          "across",
+          "prices"
+        ],
+        "z": [
+          "busy",
+          "rises",
+          "breezes",
+          "visit",
+          "choose",
+          "meals",
+          "praising",
+          "reasonable",
+          "prices"
+        ]
+      }
+    },
+    {
+      "id": "diag_05",
+      "title": "Financial Strategy",
+      "theme": "Business & Numbers",
+      "target_text": "I think several investors missed the central theme during the summit yesterday. Some thought the math was simple, while others saw serious risks in the fifth proposal. Passing this milestone demands disciplined habits and trustworthy financial advice.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "θ",
+        "s",
+        "ð"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "θ": [
+          "think",
+          "theme",
+          "thought",
+          "math",
+          "fifth"
+        ],
+        "s": [
+          "several",
+          "investors",
+          "missed",
+          "central",
+          "summit",
+          "yesterday",
+          "some",
+          "simple",
+          "saw",
+          "serious",
+          "risks",
+          "passing",
+          "milestone",
+          "advice"
+        ],
+        "ð": [
+          "the",
+          "others",
+          "this",
+          "trustworthy"
+        ]
+      }
+    },
+    {
+      "id": "diag_06",
+      "title": "Innovation Lab",
+      "theme": "Technology",
+      "target_text": "Our engineering branch launched a major challenge to bridge modern technology and practical design. Each specialist pitched a unique solution, showing sharp vision and genuine passion. Watching the digital dashboard change in real time inspired the entire organization.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "tʃ",
+        "dʒ",
+        "ʃ"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "tʃ": [
+          "branch",
+          "launched",
+          "challenge",
+          "each",
+          "pitched",
+          "watching",
+          "change"
+        ],
+        "dʒ": [
+          "engineering",
+          "major",
+          "challenge",
+          "bridge",
+          "technology",
+          "genuine",
+          "digital",
+          "change"
+        ],
+        "ʃ": [
+          "specialist",
+          "solution",
+          "showing",
+          "sharp",
+          "passion",
+          "dashboard",
+          "organization"
+        ]
+      }
+    },
+    {
+      "id": "diag_07",
+      "title": "Global Logistics",
+      "theme": "Operations",
+      "target_text": "Clear communication really helps global transport lines operate smoothly across several borders. When freight carriers deliver critical materials on schedule, local suppliers rarely face sudden delays. Our role is to resolve complex logistics problems quickly.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "ɹ",
+        "l"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "ɹ": [
+          "really",
+          "transport",
+          "operate",
+          "across",
+          "freight",
+          "carriers",
+          "critical",
+          "materials",
+          "rarely",
+          "role",
+          "resolve",
+          "problems"
+        ],
+        "l": [
+          "clear",
+          "really",
+          "helps",
+          "global",
+          "lines",
+          "deliver",
+          "materials",
+          "local",
+          "suppliers",
+          "rarely",
+          "role",
+          "resolve",
+          "complex",
+          "logistics",
+          "problems",
+          "quickly"
+        ]
+      }
+    },
+    {
+      "id": "diag_08",
+      "title": "Health & Nutrition",
+      "theme": "Wellness",
+      "target_text": "Maintaining healthy teeth and bones requires balanced nutrition throughout one's youth. Athletes often drink thick fruit smoothies with fresh seeds and oats. Experts emphasize that consistent routines, rest, and truthful habits matter far more than quick fixes.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "θ",
+        "z"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "θ": [
+          "healthy",
+          "teeth",
+          "throughout",
+          "youth",
+          "athletes",
+          "thick",
+          "truthful"
+        ],
+        "z": [
+          "bones",
+          "requires",
+          "smoothies",
+          "seeds",
+          "emphasize",
+          "routines",
+          "fixes"
+        ]
+      }
+    },
+    {
+      "id": "diag_09",
+      "title": "Valley Expedition",
+      "theme": "Nature & Travel",
+      "target_text": "We viewed the vast valley from the west window of the wooden railway car. Every visitor took valuable photos of the wolves wandering through the wild woods. The crew provided warm food and guided everyone safely along the scenic route.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "w",
+        "v"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "w": [
+          "we",
+          "west",
+          "window",
+          "wooden",
+          "railway",
+          "wolves",
+          "wandering",
+          "wild",
+          "woods",
+          "warm",
+          "everyone"
+        ],
+        "v": [
+          "viewed",
+          "vast",
+          "valley",
+          "every",
+          "visitor",
+          "valuable",
+          "wolves",
+          "provided",
+          "everyone"
+        ]
+      }
+    },
+    {
+      "id": "diag_10",
+      "title": "Civic Dialogue",
+      "theme": "Community",
+      "target_text": "They gathered together to determine whether the city should rebuild the northern pathway. Although their opinions differed, neither side wanted further conflict with their neighbors. Breathing together in silence, they found common ground before the night was over.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "ð"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "ð": [
+          "they",
+          "gathered",
+          "together",
+          "whether",
+          "the",
+          "northern",
+          "although",
+          "their",
+          "neither",
+          "further",
+          "breathing"
+        ]
+      }
+    },
+    {
+      "id": "diag_11",
+      "title": "Weekend Trip",
+      "theme": "Travel & Plans",
+      "target_text": "Last Tuesday, Kate packed her bag and left for a technical camp. The trip back was tense: ten people sat at the back of a crowded taxi. Still, everyone kept calm, checked the map, and had a fantastic time.",
+      "cue": "Read at your natural pace, as if telling a friend. Don’t slow down for the hard sounds — we want to hear how you normally speak.",
+      "measured": [
+        "æ",
+        "ɛ",
+        "t",
+        "k"
+      ],
+      "pass_mark": 80,
+      "sound_words": {
+        "æ": [
+          "last",
+          "packed",
+          "bag",
+          "camp",
+          "back",
+          "sat",
+          "taxi",
+          "map",
+          "had",
+          "fantastic"
+        ],
+        "ɛ": [
+          "left",
+          "technical",
+          "tense",
+          "ten",
+          "everyone",
+          "kept",
+          "checked"
+        ],
+        "t": [
+          "tuesday",
+          "technical",
+          "trip",
+          "tense",
+          "ten",
+          "taxi",
+          "time"
+        ],
+        "k": [
+          "kate",
+          "camp",
+          "technical",
+          "crowded",
+          "calm",
+          "kept",
+          "checked",
+          "taxi"
+        ]
+      }
     }
   ]
 }

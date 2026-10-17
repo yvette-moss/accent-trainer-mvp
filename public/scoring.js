@@ -38,6 +38,10 @@
     threeStarTarget: 80,
     twoStarOverall: 65,
     targetFail: 65,
+    // Coaching status (the only result a learner sees): a target sound "passes"
+    // at 80+ with no substitution/omission; "fluent" gates the middle status.
+    targetPass: 80,
+    fluent: 70,
   };
   var LABELS = {
     3: { label: 'Mastered! Clear & natural.', tone: 'green' },
@@ -262,6 +266,7 @@
       return {
         display: tok.display, parts: [], score: null, errorType: 'None', heardAs: null, phonemes: [],
         isTarget: false, targetFailed: false,
+        start: null, end: null, // seconds from the start of the audio (Azure Offset/Duration)
       };
     });
 
@@ -270,6 +275,7 @@
     var targets = [];
     function addTarget(w, part, t) {
       t.word = cleanWord(w.display);
+      t.wordIndex = words.indexOf(w);
       t.part = part;
       t.failed = !!t.reason || t.score === null || t.score < THRESHOLDS.targetFail;
       if (!t.reason && t.failed) t.reason = 'low_score';
@@ -278,9 +284,19 @@
       targets.push(t);
     }
 
+    function addTiming(w, raw) {
+      var off = Number(raw && raw.Offset), dur = Number(raw && raw.Duration);
+      if (!isFinite(off) || !isFinite(dur) || dur <= 0) return;
+      var a = off / 1e7, b = (off + dur) / 1e7;
+      w.start = w.start === null ? a : Math.min(w.start, a);
+      w.end = w.end === null ? b : Math.max(w.end, b);
+    }
+
     refParts.forEach(function (rp, idx) {
       var w = words[rp.token];
       var si = refMatch[idx];
+      if (si >= 0) addTiming(w, spoken[si].raw);
+      else if (substitutions[idx] !== undefined) addTiming(w, spoken[substitutions[idx]].raw);
       var isTarget = !!targetSet[rp.norm];
       if (si >= 0) {
         var raw = spoken[si].raw;
@@ -435,6 +451,191 @@
   /* Session analytics                                               */
   /* -------------------------------------------------------------- */
 
+  /* -------------------------------------------------------------- */
+  /* Coaching status (what the learner sees instead of numbers)      */
+  /* -------------------------------------------------------------- */
+
+  var STATUS = {
+    spot_on: { key: 'spot_on', label: 'Spot On! Crisp & Natural', tone: 'green' },
+    almost: { key: 'almost', label: 'Almost There — Just Minor Polish', tone: 'amber' },
+    needs_work: { key: 'needs_work', label: 'Needs Work on Target Sound', tone: 'red' },
+  };
+
+  /**
+   * Discrete pass/miss per target-sound check, then one of three statuses:
+   *   spot_on    every target sound passed (≥ targetPass, no substitution/omission)
+   *   almost     fluent, and exactly one target sound slipped (scored below the
+   *              pass mark but was not substituted, skipped or clearly failed)
+   *   needs_work a target sound was substituted, skipped or failed, more than one
+   *              slipped, or the delivery wasn't fluent
+   * Without any target checks (no target words in the attempt) the star rating decides.
+   */
+  function feedbackStatus(analysis) {
+    var targets = (analysis && analysis.targets) || [];
+    var checks = targets.map(function (t) {
+      var substituted = t.reason === 'heard_as' || t.reason === 'omitted' || t.reason === 'replaced';
+      var passed = !substituted && t.score !== null && t.score >= THRESHOLDS.targetPass;
+      var hard = substituted || t.score === null || t.score < THRESHOLDS.targetFail;
+      return {
+        word: t.word, wordIndex: t.wordIndex, phoneme: t.phoneme, produced: t.produced || null,
+        reason: substituted ? t.reason : passed ? null : (hard ? 'failed' : 'slipped'),
+        heardAs: t.heardAs || null, passed: passed, hard: !passed && hard,
+      };
+    });
+    var misses = checks.filter(function (c) { return !c.passed; });
+    var fluent = (analysis.fluency === null || analysis.fluency === undefined || analysis.fluency >= THRESHOLDS.fluent)
+      && !(analysis.words || []).some(function (w) { return w.errorType === 'Omission'; });
+    var status;
+    if (!checks.length) {
+      status = analysis.stars >= 3 ? STATUS.spot_on : analysis.stars === 2 ? STATUS.almost : STATUS.needs_work;
+    } else if (!misses.length) {
+      status = STATUS.spot_on;
+    } else if (misses.length === 1 && !misses[0].hard && fluent) {
+      status = STATUS.almost;
+    } else {
+      status = STATUS.needs_work;
+    }
+    var missedWords = {};
+    misses.forEach(function (m) { if (m.wordIndex >= 0) missedWords[m.wordIndex] = true; });
+    return {
+      key: status.key, label: status.label, tone: status.tone,
+      passes: checks.length - misses.length, total: checks.length,
+      checks: checks, misses: misses, missedWords: missedWords, fluent: fluent,
+    };
+  }
+
+  /* -------------------------------------------------------------- */
+  /* Onboarding diagnostic                                           */
+  /* -------------------------------------------------------------- */
+
+  // A sound is a focus when fewer than this share of its occurrences pass.
+  var DIAGNOSTIC_WEAK_PASS_RATE = 0.75;
+  // At or above this share of passes a sound reads as "clear".
+  var DIAGNOSTIC_CLEAR_PASS_RATE = 0.85;
+
+  /**
+   * Per-sound accuracy for the diagnostic paragraph.
+   *
+   * Every named phoneme in the attempt that is one of `diag.measured` counts as a
+   * sample (so all /θ/ in the paragraph are averaged, not just one word). When
+   * Azure returns no phoneme names for a word (en-GB), or the word was replaced by
+   * another word, the word's own score stands in for each measured sound it
+   * carries, using `diag.sound_words`. Skipped words are not samples (a skipped
+   * "the" says nothing about /ð/), but they are counted.
+   *
+   * Each occurrence passes or misses discretely: it passes at the pass mark
+   * (THRESHOLDS.targetPass) when Azure didn't hear a different sound. A sound is
+   * a focus when fewer than 75% of its occurrences pass. Averages are kept only
+   * for ordering and for the coach; the learner never sees a number.
+   *
+   * @returns {{ scores, weakPhonemes, strongest, level, omitted, passMark }}
+   *   scores: [{ phoneme, score|null, samples, passes, rating, best_word, weakest_word, level }] in `measured` order
+   *     rating: 'clear' | 'nearly' | 'focus' | null (not heard)
+   *   weakPhonemes: up to 2 focus sounds, weakest first
+   */
+  function diagnosticProfile(analysis, diag) {
+    var measured = (diag && diag.measured) || [];
+    var passMark = (diag && diag.pass_mark) || THRESHOLDS.targetPass;
+    var soundWords = (diag && diag.sound_words) || {};
+    var buckets = {};
+    measured.forEach(function (ph) { buckets[ph] = []; });
+    var omitted = 0;
+
+    ((analysis && analysis.words) || []).forEach(function (w) {
+      var word = cleanWord(w.display);
+      if (w.errorType === 'Omission') { omitted++; return; }
+      var named = (w.phonemes || []).filter(function (p) { return p.phoneme && p.score !== null; });
+      if (named.length) {
+        named.forEach(function (p) {
+          if (buckets[p.phoneme]) {
+            buckets[p.phoneme].push({ word: word, score: p.score, level: 'phoneme', passed: p.score >= passMark && !p.produced, substituted: !!p.produced });
+          }
+        });
+        return;
+      }
+      var parts = word.split(/[-–—]/).map(normalizeWord).filter(Boolean);
+      measured.forEach(function (ph) {
+        var carries = (soundWords[ph] || []).some(function (sw) { return parts.indexOf(sw) !== -1; });
+        if (carries && w.score !== null) {
+          buckets[ph].push({ word: word, score: w.score, level: 'word', passed: w.errorType !== 'Substitution' && w.score >= passMark, substituted: w.errorType === 'Substitution' });
+        }
+      });
+    });
+
+    var scores = measured.map(function (ph) {
+      var list = buckets[ph];
+      if (!list.length) return { phoneme: ph, score: null, samples: 0, passes: 0, substitutions: 0, rating: null, best_word: null, weakest_word: null, level: null };
+      var sum = 0, passes = 0, subs = 0, best = list[0], worst = list[0];
+      list.forEach(function (x) {
+        sum += x.score;
+        if (x.passed) passes++;
+        if (x.substituted) subs++;
+        if (x.score > best.score) best = x;
+        if (x.score < worst.score) worst = x;
+      });
+      return {
+        phoneme: ph,
+        score: roundScore(sum / list.length),
+        samples: list.length,
+        passes: passes,
+        substitutions: subs,
+        rating: passes / list.length < DIAGNOSTIC_WEAK_PASS_RATE ? 'focus'
+          : passes / list.length >= DIAGNOSTIC_CLEAR_PASS_RATE ? 'clear' : 'nearly',
+        best_word: best.word,
+        weakest_word: worst.word,
+        level: list.every(function (x) { return x.level === 'phoneme'; }) ? 'phoneme' : 'word',
+      };
+    });
+
+    var measuredScores = scores.filter(function (x) { return x.score !== null; });
+    function rate(x) { return x.passes / x.samples; }
+    var weakPhonemes = measuredScores
+      .filter(function (x) { return x.rating === 'focus'; })
+      // fewest clean occurrences first; then the sound Azure heard as another sound most often; then lowest score
+      .sort(function (a, b) { return (rate(a) - rate(b)) || (b.substitutions / b.samples - a.substitutions / a.samples) || (a.score - b.score); })
+      .slice(0, 2)
+      .map(function (x) { return x.phoneme; });
+    var strongest = measuredScores.slice().sort(function (a, b) { return (rate(b) - rate(a)) || (b.score - a.score); })[0] || null;
+
+    return {
+      scores: scores,
+      weakPhonemes: weakPhonemes,
+      strongest: strongest,
+      level: measuredScores.some(function (x) { return x.level === 'word'; }) ? 'word' : 'phoneme',
+      omitted: omitted,
+      passMark: passMark,
+    };
+  }
+
+  /**
+   * Personalised ordering of the library: drills whose focus includes a weak
+   * sound come first (more weak sounds first, then the weakest measured focus
+   * sound), then the rest; ties keep curriculum order.
+   *
+   * @param {object[]} exercises
+   * @param {string[]} weakPhonemes
+   * @param {object}   [scoreBySound]  { 'θ': 54, … } from the diagnostic
+   * @returns {{ exercise, weakHits, recommended }[]}
+   */
+  function rankExercises(exercises, weakPhonemes, scoreBySound) {
+    var weak = weakPhonemes || [];
+    var scoresMap = scoreBySound || {};
+    return (exercises || [])
+      .map(function (ex, i) {
+        var focus = ex.focus || [];
+        var weakHits = focus.filter(function (f) { return weak.indexOf(f) !== -1; }).length;
+        var minScore = focus.reduce(function (m, f) {
+          var v = scoresMap[f];
+          return typeof v === 'number' && v < m ? v : m;
+        }, 101);
+        return { exercise: ex, weakHits: weakHits, recommended: weakHits > 0, minScore: minScore, index: i };
+      })
+      .sort(function (a, b) {
+        return (b.weakHits - a.weakHits) || (a.recommended ? a.minScore - b.minScore : 0) || (a.index - b.index);
+      })
+      .map(function (r) { return { exercise: r.exercise, weakHits: r.weakHits, recommended: r.recommended }; });
+  }
+
   function topTroubleSounds(attempts, n) {
     var counts = {};
     (attempts || []).forEach(function (a) {
@@ -493,6 +694,10 @@
     tokenizeReference: tokenizeReference,
     analyzeAttempt: analyzeAttempt,
     topTroubleSounds: topTroubleSounds,
+    diagnosticProfile: diagnosticProfile,
+    feedbackStatus: feedbackStatus,
+    STATUS: STATUS,
+    rankExercises: rankExercises,
     toCsv: toCsv,
   };
 });
